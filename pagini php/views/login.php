@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
@@ -20,39 +20,40 @@
       rel="stylesheet"
     />
 
-    <title>Document</title>
+    <title>Supermarket</title>
   </head>
   <body>
     <header>
       <nav>
-        <ul class="main">
-            <li>
-                <a href="index.html"><i class="fas fa-home"></i> Acasa</a>
-            </li>
-
-            <li>
-                <a  href="produse.html"><i class="fas fa-angle-right"></i>Produse</a>
-            </li>
-            <li>
-                <a href="reduceri.html"><i class="fas fa-angle-right"></i>Reduceri</a>
-            </li>
-            <li>
-                <a href="clienti.html"><i class="fas fa-users"></i>Clienti</a>
-            </li>
-            <li>
-                <a href="furnizori.html"><i class="fas fa-angle-right"></i>Furnizori</a>
-            </li>
-            <li>
-                <a class="active"  href="login.html"><i class="fas fa-angle-right"></i>Login</a>
-            </li>
-
-        </ul>
+      <ul class="main">
+                <li>
+                    <a  href="index.php"><i class="fas fa-home"></i> Acasa</a>
+                </li>
+                <li>
+                <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
+                </li>
+                <li>
+                    <a href="produse.php"><i class="fas fa-angle-right"></i>Produse</a>
+                </li>
+                <li>
+                    <a href="reduceri.php"><i class="fas fa-angle-right"></i>Reduceri</a>
+                </li>
+                <li>
+                    <a href="clienti.php"><i class="fas fa-users"></i>Clienti</a>
+                </li>
+                <li>
+                    <a href="furnizori.php"><i class="fas fa-angle-right"></i>Furnizori</a>
+                </li>
+                <li>
+                    <a class="active"  href="login.php"><i class="fas fa-angle-right"></i>Login</a>
+                </li>
+            </ul>
       </nav>
       <article>
-        <div class="main-title">
-          <span>Login</span>
-        </div>
-      </article>
+            <div class="main-title">
+                <h1>Login</h1>
+            </div>
+        </article>
     </header>
     <div class="background">
       <div class="space"></div>
@@ -67,7 +68,7 @@
         </div>
         <div class="more">
           <div class="signUp">
-            <a href="register.html">
+            <a href="register.php">
               Inscrie-te
             </a>
           </div>
@@ -76,7 +77,7 @@
         <div class="btn">
           <button
             class="button"
-            onclick="location.href='index.html'"
+            onclick="location.href='index.php'"
             type="button"
           >
             Login

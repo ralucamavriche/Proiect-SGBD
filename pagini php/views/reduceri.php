@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
@@ -19,23 +19,25 @@
         <nav>
             <ul class="main">
                 <li>
-                    <a href="index.html"><i class="fas fa-home"></i> Acasa</a>
-                </li>
-
-                <li>
-                    <a class="active" href="produse.html"><i class="fas fa-angle-right"></i>Produse</a>
+                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
                 </li>
                 <li>
-                    <a href="reduceri.html"><i class="fas fa-angle-right"></i>Reduceri</a>
+                <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
                 <li>
-                    <a href="clienti.html"><i class="fas fa-users"></i>Clienti</a>
+                    <a href="produse.php"><i class="fas fa-angle-right"></i>Produse</a>
                 </li>
                 <li>
-                    <a href="furnizori.html"><i class="fas fa-angle-right"></i>Furnizori</a>
+                    <a class="active" href="reduceri.php"><i class="fas fa-angle-right"></i>Reduceri</a>
                 </li>
                 <li>
-                    <a href="login.html"><i class="fas fa-angle-right"></i>Login</a>
+                    <a href="clienti.php"><i class="fas fa-users"></i>Clienti</a>
+                </li>
+                <li>
+                    <a href="furnizori.php"><i class="fas fa-angle-right"></i>Furnizori</a>
+                </li>
+                <li>
+                    <a href="login.php"><i class="fas fa-angle-right"></i>Login</a>
                 </li>
             </ul>
         </nav>
@@ -60,8 +62,11 @@
                         </h2>
                     </div>
                     <div class="pret">
-                            <h1>Subtotal:</h1>
-                        18 Lei
+                        <h1>Subtotal:</h1>
+                        <div class="pret_final">
+                            18 Lei/12 Lei
+                        </div>
+
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -69,7 +74,7 @@
                         </button>
                     </div>
                     <div class="articleButton">
-                        <button class="btn normal" onclick="location.href='produs.html'" type="button">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
                             Vezi mai multe
                         </button>
                     </div>
@@ -86,8 +91,10 @@
                         </h2>
                     </div>
                     <div class="pret">
-                            <h1>Subtotal:</h1>
-                        18 Lei
+                        <h1>Subtotal:</h1>
+                        <div class="pret_final">
+                            18 Lei/12 Lei
+                        </div>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -95,7 +102,7 @@
                         </button>
                     </div>
                     <div class="articleButton">
-                        <button class="btn normal" onclick="location.href='produs.html'" type="button">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
                             Vezi mai multe
                         </button>
                     </div>
@@ -112,122 +119,126 @@
                         </h2>
                     </div>
                     <div class="pret">
-                            <h1>Subtotal:</h1>
-                        18 Lei
+                        <h1>Subtotal:</h1>
+                        <div class="pret_final">
+                            18 Lei/12 Lei
+                        </div>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
                             Cumpara
                         </button>
                     </div>
-                        <div class="articleButton">
-                            <button class="btn normal" onclick="location.href='produs.html'" type="button">
-                                Vezi mai multe
-                            </button>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
+                <div class="articleContainer">
+                    <div class="articleImg">
+                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                            alt="imgPost" />
+                    </div>
+                    <div class="articleTitle">
+                        <h2>
+                            Fructe
+                        </h2>
+                    </div>
+                    <div class="pret">
+                        <h1>Subtotal:</h1>
+                        <div class="pret_final">
+                            18 Lei/12 Lei
                         </div>
                     </div>
-                    <div class="articleContainer">
-                        <div class="articleImg">
-                            <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
-                                alt="imgPost" />
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="pageOptions">
+                <div class="categories">
+                    <div class="categoriesTitle">
+                        <span>Categorii</span>
+                    </div>
+                    <div class="categoriesBody">
+                        <div class="categoriesContainer">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Legume
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    10
+                                </span>
+                            </a>
                         </div>
-                        <div class="articleTitle">
-                            <h2>
-                                Fructe
-                            </h2>
+                        <div class="categoriesContainer">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Fructe
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    10
+                                </span>
+                            </a>
                         </div>
-                        <div class="pret">
-                                <h1>Subtotal:</h1>
-                            18 Lei
+                        <div class="categoriesContainer">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Carne
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    10
+                                </span>
+                            </a>
                         </div>
-                        <div class="buyButton">
-                            <button class="btn normal" type="button">
-                                Cumpara
-                            </button>
+                        <div class="categoriesContainer">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Dulciuri
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    10
+                                </span>
+                            </a>
                         </div>
-                            <div class="articleButton">
-                                <button class="btn normal" onclick="location.href='produs.html'" type="button">
-                                    Vezi mai multe
-                                </button>
-                            </div>
+                        <div class="categoriesContainer">
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Bauturi
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    10
+                                </span>
+                            </a>
                         </div>
                     </div>
-                    <div class="pageOptions">
-                        <div class="categories">
-                            <div class="categoriesTitle">
-                                <span>Categorii</span>
-                            </div>
-                            <div class="categoriesBody">
-                                <div class="categoriesContainer">
-                                    <a href="#">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Legume
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="#">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Fructe
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="#">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Carne
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="#">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Dulciuri
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="#">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Bauturi
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
 
-                    <!-- <div class="pageRecentPosts">
+            <!-- <div class="pageRecentPosts">
           <div class="recentPosts">
             <div class="recentTitlePosts">
               <span>Postari Recente</span>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
@@ -19,23 +19,25 @@
         <nav>
             <ul class="main">
                 <li>
-                    <a class="active"  href="index.html"><i class="fas fa-home"></i> Acasa</a>
-                </li>
-
-                <li>
-                    <a href="produse.html"><i class="fas fa-angle-right"></i>Produse</a>
+                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
                 </li>
                 <li>
-                    <a href="reduceri.html"><i class="fas fa-angle-right"></i>Reduceri</a>
+                <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
                 <li>
-                    <a href="clienti.html"><i class="fas fa-users"></i>Clienti</a>
+                    <a class="active" href="produse.php"><i class="fas fa-angle-right"></i>Produse</a>
                 </li>
                 <li>
-                    <a href="furnizori.html"><i class="fas fa-angle-right"></i>Furnizori</a>
+                    <a href="reduceri.php"><i class="fas fa-angle-right"></i>Reduceri</a>
                 </li>
                 <li>
-                    <a href="login.html"><i class="fas fa-angle-right"></i>Login</a>
+                    <a href="clienti.php"><i class="fas fa-users"></i>Clienti</a>
+                </li>
+                <li>
+                    <a href="furnizori.php"><i class="fas fa-angle-right"></i>Furnizori</a>
+                </li>
+                <li>
+                    <a href="login.php"><i class="fas fa-angle-right"></i>Login</a>
                 </li>
             </ul>
         </nav>
@@ -69,7 +71,7 @@
                         </button>
                     </div>
                     <div class="articleButton">
-                        <button class="btn normal" onclick="location.href='produs.html'" type="button">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
                             Vezi mai multe
                         </button>
                     </div>
@@ -95,7 +97,7 @@
                         </button>
                     </div>
                     <div class="articleButton">
-                        <button class="btn normal" onclick="location.href='produs.html'" type="button">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
                             Vezi mai multe
                         </button>
                     </div>
@@ -121,7 +123,7 @@
                         </button>
                     </div>
                         <div class="articleButton">
-                            <button class="btn normal" onclick="location.href='produs.html'" type="button">
+                            <button class="btn normal" onclick="location.href='produs.php'" type="button">
                                 Vezi mai multe
                             </button>
                         </div>
@@ -146,7 +148,7 @@
                             </button>
                         </div>
                             <div class="articleButton">
-                                <button class="btn normal" onclick="location.href='produs.html'" type="button">
+                                <button class="btn normal" onclick="location.href='produs.php'" type="button">
                                     Vezi mai multe
                                 </button>
                             </div>
