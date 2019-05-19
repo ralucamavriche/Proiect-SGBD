@@ -17,15 +17,14 @@ DROP TABLE facturi CASCADE CONSTRAINTS
 
 CREATE TABLE clienti (
   id INT NOT NULL PRIMARY KEY,
-  cnp NUMBER(13) NOT NULL,
   nume VARCHAR2(15) NOT NULL,
   prenume VARCHAR2(30) NOT NULL,
   strada VARCHAR(300) ,
-  bloc CHAR(2),
+  bloc VARCHAR(2),
   apartament NUMBER(5),
   telefon NUMBER(10),
-  data_nastere DATE,
   email VARCHAR2(40),
+  parola varchar2(40),
   created_at DATE,
   updated_at DATE
 )
@@ -109,24 +108,15 @@ DECLARE
   v_prenume2 VARCHAR2(255);
   v_strada VARCHAR2(255);
 
-  v_cnp NUMBER(13);
-  v_cnp_aux VARCHAR2(13);
   v_temp int;
-  v_temp1 int;
-  v_temp2 int;
-  v_temp3 int;
-  v_temp_date date;
   v_telefon int;
   v_bloc varchar2(2);
   v_apartament int;
-  v_data_nastere date;  
   v_email varchar2(40);
+  v_parola varchar2(40);
 
   v_im int;
-  v_im2 int;
-  v_im3 int;
   v_data date;
-  v_tempp int;
   v_ji int;
   v_plata int;
   
@@ -174,7 +164,7 @@ BEGIN
 --clienti
 
    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela clienti...');
-   FOR v_i IN 1..100000 LOOP
+   FOR v_i IN 1..10000 LOOP
       v_nume := lista_nume(TRUNC(DBMS_RANDOM.VALUE(0,lista_nume.count))+1);
       IF (DBMS_RANDOM.VALUE(0,100)<50) THEN      
          v_prenume1 := lista_prenume_fete(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_fete.count))+1);
@@ -198,12 +188,6 @@ BEGIN
            v_prenume:=v_prenume1;
       END IF;
 
-      LOOP
-         v_cnp := FLOOR(DBMS_RANDOM.VALUE(1000000000000,9999999999999));
-         select count(*) into v_temp from clienti where cnp = v_cnp;
-         exit when v_temp=0;
-      END LOOP;
-
       LOOP  
         v_strada := lista_strazi(TRUNC(DBMS_RANDOM.VALUE(0,lista_strazi.count))+1);
         v_bloc := chr(TRUNC(DBMS_RANDOM.VALUE(0,20))+65) || chr(TRUNC(DBMS_RANDOM.VALUE(0,8))+49);
@@ -214,10 +198,9 @@ BEGIN
         exit when v_temp < 30;
       END LOOP;
       
-      v_data_nastere := TO_DATE('01-01-1974','MM-DD-YYYY')+TRUNC(DBMS_RANDOM.VALUE(0,365));
-      
       v_temp:='';
       v_email := lower(v_nume ||'.'|| v_prenume1);
+      v_parola:= lista_nume(TRUNC(DBMS_RANDOM.VALUE(0,lista_nume.count))+1);
       LOOP         
          select count(*) into v_temp from clienti where email = v_email||v_temp;
          exit when v_temp=0;
@@ -228,8 +211,8 @@ BEGIN
          else v_email := v_email ||'@info.ro';
       end if;
 
-      insert into clienti values(v_i, v_cnp, v_nume, v_prenume,v_strada, v_bloc,v_apartament, v_telefon, v_data_nastere, v_email, sysdate, sysdate);
-      DBMS_OUTPUT.PUT_LINE(v_i || '        ' || v_cnp || v_nume || v_prenume || v_strada || v_bloc || v_apartament || v_telefon || v_data_nastere || v_email || sysdate || sysdate);
+      insert into clienti values(v_i, v_nume, v_prenume,v_strada, v_bloc,v_apartament, v_telefon, v_email,v_parola, sysdate, sysdate);
+      DBMS_OUTPUT.PUT_LINE(v_i || '        ' || v_nume || v_prenume || v_strada || v_bloc || v_apartament || v_telefon || v_email|| v_parola || sysdate || sysdate);
    END LOOP;
    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela clienti... GATA !');
 
