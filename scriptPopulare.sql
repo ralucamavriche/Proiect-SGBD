@@ -16,7 +16,7 @@ DROP TABLE facturi CASCADE CONSTRAINTS
 /
 
 CREATE TABLE clienti (
-  id INT NOT NULL PRIMARY KEY,
+  email VARCHAR2(40) primary key,
   nume VARCHAR2(15) NOT NULL,
   prenume VARCHAR2(30) NOT NULL,
   strada VARCHAR(300) ,
@@ -128,18 +128,18 @@ DECLARE
   
   
    lista_produse_legume varr :=varr ('ala','baala','porto','cala');
-  lista_produse_fructe varr := varr('mere', 'pere', 'kiwi', 'c?p?uni', 'pepeni', 'prune', 'piersici', 'caise', 'nectarine', 'cire?e', 'struguri', 'ananas', 'mango', 'avocado', 'nuc? de cocos', 'papaya', 'fructe de cactus', 'l?m�i', 'portocale', 'grapefruit', 'mandarine', 'clementine', 'mineole' ,'banana', 'fructe uscate', 'alune', 'semin?e');
-  lista_produse_lactate varr := varr('lapte', 'iaurturi', 'sana', 'kefir', 'lapte b?tut', 'sm�nt�n?', 'fri?c?','branz? de vaci', 'ricotta', 'mascarpone', 'mozzarella', 'telemea de vac?', 'telemea de oaie', 'telemea de capr?',' br�nzeturi u?oare ','camembert', 'brie', 'blue', 'gorgonzola', 'br�nz? topit?', 'br�nzeturi tari', 'ca?cavaluri cedar', '?vai?er', 'parmezan', 'edam', 'gouda', 'tilsit', 'br�nz? afumat?', 'ou?', 'unt', 'deserturi', 'prajituri', 'creme');
+  lista_produse_fructe varr := varr('mere', 'pere', 'kiwi', 'c?p?uni', 'pepeni', 'prune', 'piersici', 'caise', 'nectarine', 'cire?e', 'struguri', 'ananas', 'mango', 'avocado', 'nuc? de cocos', 'papaya', 'fructe de cactus', 'l?mâi', 'portocale', 'grapefruit', 'mandarine', 'clementine', 'mineole' ,'banana', 'fructe uscate', 'alune', 'semin?e');
+  lista_produse_lactate varr := varr('lapte', 'iaurturi', 'sana', 'kefir', 'lapte b?tut', 'smântân?', 'fri?c?','branz? de vaci', 'ricotta', 'mascarpone', 'mozzarella', 'telemea de vac?', 'telemea de oaie', 'telemea de capr?',' brânzeturi u?oare ','camembert', 'brie', 'blue', 'gorgonzola', 'brânz? topit?', 'brânzeturi tari', 'ca?cavaluri cedar', '?vai?er', 'parmezan', 'edam', 'gouda', 'tilsit', 'brânz? afumat?', 'ou?', 'unt', 'deserturi', 'prajituri', 'creme');
   lista_bauturi_alcoolice varr := varr('vin alb', 'vin rosu', 'vin roze', 'spumante', 'bere la doz?', 'bere la sticl?', 'bere la pet', 'whisky', 'brandy', 'vinars', 'cognac', 'vodka', 'gin', 'palinc?', 'horinc?', '?uic?', 'lichior', 'afinat?', 'vi?inat?', 'caisat?', 'fernet', 'bitter', 'vermut', 'digestiv');
   lista_bauturi_nealcoolice varr := varr('nectarur', 'suc r?coritor carbogazoas' ,'suc racoritor necarbogazoas', 'apa minerala' ,'apa plat?', 'energizant', 'sirop', 'Ice Tea');
-  lista_produse_carne varr := varr('carne de porc', 'carne de vit?', 'carne de pui' , 'carne de oaie', 'preparat proaspat afumat','preparafum?tura', 'carne tocata', 'piese de berbecut', 'c�rna?i proaspe?i');
+  lista_produse_carne varr := varr('carne de porc', 'carne de vit?', 'carne de pui' , 'carne de oaie', 'preparat proaspat afumat','preparafum?tura', 'carne tocata', 'piese de berbecut', 'cârna?i proaspe?i');
   list_produse_conserve varr := varr('conserve de fructe', 'conserve de carne', 'conserve muraturi', 'conserve de peste','conserve de tomate');
   lista_produse_alimente_baza varr := varr ('faia?', 'zah?r', 'ulei', 'margarin?', 'crema tartinabila', 'dulce?a', 'gem', 'miere', 'lapte condensat', 'lapte UHT','sare', 'mirodenii', 'mu?tar', 'o?et', 'cereale', 'paste f?inoase', 'orez','soia', 'prafuri');
-  lista_produse_panificatie varr := varr('p�ine din secar?', 'p�ine din gr�u', 'p�ine din ovaz', 'p�ine din orz', 'porumb', 'p�ine de gr�u', 'p�ine mixt?', 'franzele', 'p�ine toast', 'chifle', 'batoane', 'baghete','chifle pentru hamburgeri' , 'lipie');
+  lista_produse_panificatie varr := varr('pâine din secar?', 'pâine din grâu', 'pâine din ovaz', 'pâine din orz', 'porumb', 'pâine de grâu', 'pâine mixt?', 'franzele', 'pâine toast', 'chifle', 'batoane', 'baghete','chifle pentru hamburgeri' , 'lipie');
   lista_produse_dulciuri varr := varr('ciocolat?', 'bomboane', 'drajeuri', 'jeleuri', 'bomboane mentolate', 'mixuri bomboane', 'gum? de mestecat', 'cipsuri', 'covrigei', 'sticksuri', 'biscui?i', 'napolitane', 'pr?jituri', 'cozonaci', 'checuri', 'fursecuri', 'brio?e','ceai', 'cafea boabe', 'cafea m?cinat?', 'cafea instant' , 'espresso');
   lista_produse_peste varr := varr('crap', 'p?str?v', 'somn', 'caras', 'somon', 'icre', 'fructe de mare');
-  lista_produse_curetenie varr := varr('detergent', '�n?lbitori pentru rufe', 'produse anticalcar', 'detergenti pentru masina de spalat vase', ' detergent baie', 'detergent buc?t?rie ','detergent vase', 'creme', 'prafuri','lavete','bure?i', 'odorizante �nc?peri', 'insecticide', 'm?nu?i','sac menajer');
-  lista_produse_menajer varr := varr('ceramic', 'portelan', 'servicii de cafea', ' servicii ceai' ,'cadouri', 'lampi decorative', 'sfesnice', 'articole din sticla', 'bambus', 'ratan', 'fier forjat', 'tablouri','ceasuri', 'termometre', 'mese de calcat', 'uscatoare de rufe', 'huse pentru depozitare', 'huse si rafturi pentru pantofi', 'cutii pliabile','uscatoare de vesela', 'castroane', 'site','placi de tocat', 'tavi', 'capace', 'oale', 'cratite', 'tigai', 'ustensile', 'forme de copt','accesorii','tac�muri', 'cutite','ustensile profesionale','halbe de bere', 'cupe de �nghetata', 'boluri pentru gheata', 'carafe', 'scrumiere');
+  lista_produse_curetenie varr := varr('detergent', 'în?lbitori pentru rufe', 'produse anticalcar', 'detergenti pentru masina de spalat vase', ' detergent baie', 'detergent buc?t?rie ','detergent vase', 'creme', 'prafuri','lavete','bure?i', 'odorizante înc?peri', 'insecticide', 'm?nu?i','sac menajer');
+  lista_produse_menajer varr := varr('ceramic', 'portelan', 'servicii de cafea', ' servicii ceai' ,'cadouri', 'lampi decorative', 'sfesnice', 'articole din sticla', 'bambus', 'ratan', 'fier forjat', 'tablouri','ceasuri', 'termometre', 'mese de calcat', 'uscatoare de rufe', 'huse pentru depozitare', 'huse si rafturi pentru pantofi', 'cutii pliabile','uscatoare de vesela', 'castroane', 'site','placi de tocat', 'tavi', 'capace', 'oale', 'cratite', 'tigai', 'ustensile', 'forme de copt','accesorii','tacâmuri', 'cutite','ustensile profesionale','halbe de bere', 'cupe de înghetata', 'boluri pentru gheata', 'carafe', 'scrumiere');
  
   lista_reducere varr := varr('RED10%','RED20%','RED30%','RED40%','RED50%','RED60%','RED70%','RED80%','RED90%','RED100%','RED10%','RED15%','RED25%','RED35%','RED45%','RED55%','RED65%','RED75%','RED85%','RED95%');
   id_categorie_produs int;
@@ -208,8 +208,8 @@ BEGIN
          else v_email := v_email ||'@info.ro';
       end if;
 
-      insert into clienti values(v_i, v_nume, v_prenume,v_strada, v_bloc,v_apartament, v_telefon, v_email,v_parola, sysdate, sysdate);
-      DBMS_OUTPUT.PUT_LINE(v_i || '        ' || v_nume || v_prenume || v_strada || v_bloc || v_apartament || v_telefon || v_email|| v_parola || sysdate || sysdate);
+      insert into clienti values(v_email, v_nume, v_prenume,v_strada, v_bloc,v_apartament, v_telefon,v_parola);
+      DBMS_OUTPUT.PUT_LINE(v_email || v_nume || v_prenume || v_strada || v_bloc || v_apartament || v_telefon || v_parola);
    END LOOP;
    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela clienti... GATA !');
 
