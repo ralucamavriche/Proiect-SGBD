@@ -106,14 +106,14 @@
 </html>
 <?php
 ob_start();
-$conn=oci_connect("STUDENT","STUDENT","localhost/XE");
+$conn=oci_connect("PROIECT","PROIECT","localhost/XE");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 $email = $_POST['email'];
 $parola = $_POST['parola'];
 
-$result = oci_parse($conn, "SELECT * FROM PISICI WHERE ( email like '$email' and parola like '$parola' ) ");
+$result = oci_parse($conn, "SELECT * FROM clienti WHERE ( email like '$email' and parola like '$parola' ) ");
 oci_execute($result) or die(oci_error($result));
 oci_fetch_all($result, $array);
 unset($array);

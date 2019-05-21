@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$conn=oci_connect("STUDENT","STUDENT","localhost/XE");
+$conn=oci_connect("PROIECT","PROIECT","localhost/XE");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
@@ -12,7 +12,7 @@ $bloc = $_POST['bloc'];
 $apartament = $_POST['apartament'];
 $telefon = $_POST['telefon'];
 $parola = $_POST['parola'];
-$result = oci_parse($conn, "SELECT * FROM PISICI WHERE email like '$email' ");
+$result = oci_parse($conn, "SELECT * FROM clienti WHERE email like '$email' ");
 oci_execute($result) or die(oci_error($result));
 oci_fetch_all($result, $array);
 unset($array);
@@ -21,7 +21,7 @@ oci_free_statement($result);
 if( $numberofrows == 1 ){
   header('location:register.php');
 }else{
-  $sql =oci_parse($conn,"INSERT INTO PISICI VALUES ('$email', '$nume', '$prenume','$strada', '$bloc','$apartament', '$telefon', '$parola')");
+  $sql =oci_parse($conn,"INSERT INTO clienti VALUES ('$email', '$nume', '$prenume','$strada', '$bloc','$apartament', '$telefon', '$parola')");
   oci_execute($sql);
   header('location:index.php');
 }
