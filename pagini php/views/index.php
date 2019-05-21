@@ -19,7 +19,7 @@
         <nav>
             <ul class="main">
                 <li>
-                    <a class="active"  href="index.html"><i class="fas fa-home"></i> Acasa</a>
+                    <a class="active"  href="index.php"><i class="fas fa-home"></i> Acasa</a>
                 </li>
                 <li>
                 <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
@@ -37,7 +37,7 @@
                     <a href="furnizori.php"><i class="fas fa-angle-right"></i>Furnizori</a>
                 </li>
                 <li>
-                    <a href="login.php"><i class="fas fa-angle-right"></i>Login</a>
+                    <a href="logout.php"><i class="fas fa-angle-right"></i>Logout</a>
                 </li>
             </ul>
         </nav>

@@ -1,4 +1,32 @@
+<?php
+ob_start();
+$conn=oci_connect("STUDENT","STUDENT","localhost/XE");
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
+{
+$email = $_POST['email'];
+$nume = $_POST['nume'];
+$prenume = $_POST['prenume'];
+$strada = $_POST['strada'];
+$bloc = $_POST['bloc'];
+$apartament = $_POST['apartament'];
+$telefon = $_POST['telefon'];
+$parola = $_POST['parola'];
+$result = oci_parse($conn, "SELECT * FROM PISICI WHERE email like '$email' ");
+oci_execute($result) or die(oci_error($result));
+oci_fetch_all($result, $array);
+unset($array);
+$numberofrows = oci_num_rows($result);
+oci_free_statement($result);
+if( $numberofrows == 1 ){
+  header('location:register.php');
+}else{
+  $sql =oci_parse($conn,"INSERT INTO PISICI VALUES ('$email', '$nume', '$prenume','$strada', '$bloc','$apartament', '$telefon', '$parola')");
+  oci_execute($sql);
+  header('location:index.php');
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,58 +83,66 @@
         </div>
       </article>
     </header>
+    <form action="#" method="post">
     <div class="background">
       <div class="space"></div>
       <section class="loginBox">
+      <div class="email">
+          <p>
+            E-mail
+          </p>
+          <input type="text" name="email" class="form-control" required placeholder="E-mail" />
+        </div>
         <div class="firstName">
           <p>
             Nume
           </p>
-          <input type="text" name="firstName" required placeholder="Nume" />
+          <input type="text" name="nume" class="form-control" required placeholder="Nume" />
         </div>
         <div class="Prenume">
           <p>Prenume</p>
-          <input type="text" name="lastName" required placeholder="Prenume" />
+          <input type="text" name="prenume" class="form-control" required placeholder="Prenume" />
         </div>
-        <div class="email">
-          <p>
-            E-mail
-          </p>
-          <input type="text" name="email" required placeholder="E-mail" />
+        <div class="strada">
+        <p>Strada</p>
+        <input type="text"  name="strada" class="form-control" required placeholder="Strada">
         </div>
+        <div class="bloc">
+        <p>Bloc</p>
+        <input type="text"  name="bloc" class="form-control" required placeholder="Bloc">
+        </div>
+        <div class="apartament">
+        <p>Apartament</p>
+        <input type="number"  name="apartament" class="form-control" required placeholder="Apartament">
+        </div>
+        <div class="phone">
+          <p>Telefon</p>
+          <input type="text" name="telefon" class="form-control" placeholder="Telefon" required />
+        </div>
+        
         <div class="password">
           <p>Parola</p>
-          <input type="password" name="pass" required placeholder="Parola" />
+          <input type="password" name="parola" class="form-control" required placeholder="Parola" />
         </div>
         <div class="confPass">
           <p>Confirma Parola</p>
           <input
             type="password"
             name="confPass"
+            class="form-control"
             required
             placeholder="Confirma parola"
           />
         </div>
-        <div class="phone">
-          <p>Telefon</p>
-          <input type="text" name="phone" placeholder="Telefon" required />
-        </div>
-        <div class="birthday">
-          <p>Zi de nastere</p>
-          <input type="date" name="date" />
-        </div>
-        <div class="country">
-          <p>Tara</p>
-          <input type="text" name="country" placeholder="Tara" required />
-        </div>
         <div class="btn">
-          <button class="button" onclick="location.href='login.php'"  type="button">
+          <button class="button"  type="submit">
             Inscrie-te
             <i class="fas fa-arrow-right"></i>
           </button>
       </div>
       </section>
     </div>
+    </form>
     <aside></aside>
     <!-- <footer class="footer">
       <div class="iconsFooter">

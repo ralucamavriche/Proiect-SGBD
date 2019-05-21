@@ -55,16 +55,17 @@
             </div>
         </article>
     </header>
+    <form action="#" method="post">
     <div class="background">
       <div class="space"></div>
-      <form class="loginBox">
+      <div class="loginBox">
         <div class="username">
           <p>E-mail:</p>
-          <input type="text" name="username" placeholder="E-mail" />
+          <input type="text" name="email" class="form-control" required placeholder="E-mail" />
         </div>
         <div class="password">
           <p>Parola:</p>
-          <input type="password" name="pass" placeholder="Introduceti parola" />
+          <input type="password" name="parola" class="form-control" required placeholder="Introduceti parola" />
         </div>
         <div class="more">
           <div class="signUp">
@@ -77,16 +78,15 @@
         <div class="btn">
           <button
             class="button"
-            onclick="location.href='index.php'"
-            type="button"
+            type="submit"
           >
             Login
           </button>
         </div>
-      </form>
+      </div>
       <div class="spaceEnd"></div>
     </div>
-
+    </form>
     <aside></aside>
     <!-- <footer class="footer">
       <div class="iconsFooter">
@@ -104,3 +104,28 @@
     </footer> -->
   </body>
 </html>
+<?php
+ob_start();
+$conn=oci_connect("STUDENT","STUDENT","localhost/XE");
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
+{
+$email = $_POST['email'];
+$parola = $_POST['parola'];
+
+$result = oci_parse($conn, "SELECT * FROM PISICI WHERE ( email like '$email' and parola like '$parola' ) ");
+oci_execute($result) or die(oci_error($result));
+oci_fetch_all($result, $array);
+unset($array);
+$numberofrows = oci_num_rows($result);
+oci_free_statement($result);
+
+if( $numberofrows >= 1 ){
+  header('location:index.php');
+}else{
+  header('location:login.php');
+}
+}
+
+
+?>
