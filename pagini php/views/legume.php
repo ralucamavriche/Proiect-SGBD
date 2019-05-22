@@ -71,7 +71,7 @@ oci_close($conn);
             <div class="articles">
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://jillhough.com/wp-content/uploads/2013/08/Cucumbers-400x400.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -100,7 +100,7 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.comenaranjas.com/images/stories/virtuemart/product/tomate-daniela.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -130,7 +130,7 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://img.kudika.ro/images/image_thumbs/thumbs/3f8341e38f149d240de2e526d81bf94a/400x400-10-75.jpg?v=1490094034"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -159,12 +159,12 @@ oci_close($conn);
                     </div>
                     <div class="articleContainer">
                         <div class="articleImg">
-                            <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                            <img src="https://cdn.shopify.com/s/files/1/2971/2126/products/Carrot_400x.jpg?v=1528770261"
                                 alt="imgPost" />
                         </div>
                         <div class="articleTitle">
                             <h2>
-                                Fructe
+                            <?php getCategorie(21223347,'NUME_PRODUS'); ?>
                             </h2>
                         </div>
                         <div class="pret">
