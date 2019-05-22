@@ -117,17 +117,17 @@ DECLARE
   v_ji int;
   v_plata int;
   
---  v_categorie VARCHAR2(30);
---  v_id clienti.id%type; --
+  v_categorie VARCHAR2(30);
+  v_id int; --
   v_articol tip_articole.id%type;
   v_reduceri reduceri.id%type;
---  v_comenzi comenzi.id%type; --
+  v_comenzi comenzi.id%type; --
 
 --  v_clienti clienti.id%type;
     v_clienti varchar2(60);
 
---  v_produse produse.id%type;
---  v_furnizori furnizori.id%type;
+  v_produse produse.id%type;
+  v_furnizori furnizori.id%type;
   
   
    lista_produse_legume varr :=varr ('ala','baala','porto','cala');
@@ -156,8 +156,8 @@ DECLARE
   CURSOR lista_id_articol IS SELECT id FROM tip_articole;
   CURSOR lista_id_reduceri IS SELECT id FROM reduceri;
   CURSOR lista_produse IS SELECT id FROM produse;
---  CURSOR lista_id_furnizori IS SELECT id FROM furnizori;
---  CURSOR lista_comenzi IS SELECT id FROM comenzi; --
+  CURSOR lista_id_furnizori IS SELECT id FROM furnizori;
+  CURSOR lista_comenzi IS SELECT id FROM comenzi; --
    
 BEGIN
 
@@ -275,21 +275,21 @@ BEGIN
 
 
 --comenzi
-    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela comenzi...');
-    open lista_clienti;
-    FOR v_i IN 1..5000 LOOP
-        fetch lista_clienti into v_clienti;
-        exit when lista_clienti%NOTFOUND;
---        LOOP  
---           v_im := TRUNC(DBMS_RANDOM.VALUE(0,999))+1;
---            select count(*) into v_temp from comenzi where id_client=v_id ;
---           exit when v_temp < 30;
---        END LOOP;
-        
-        v_data := TO_DATE('01-01-1974','MM-DD-YYYY')+TRUNC(DBMS_RANDOM.VALUE(0,365));
-        insert into comenzi values(v_i,v_clienti,v_data);
-    end loop;
-    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela comenzi... GATA !');
+--    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela comenzi...');
+--    open lista_clienti;
+--    FOR v_i IN 1..5000 LOOP
+--        fetch lista_clienti into v_clienti;
+--        exit when lista_clienti%NOTFOUND;
+----        LOOP  
+----           v_im := TRUNC(DBMS_RANDOM.VALUE(0,999))+1;
+----            select count(*) into v_temp from comenzi where id_client=v_id ;
+----           exit when v_temp < 30;
+----        END LOOP;
+--        
+--        v_data := TO_DATE('01-01-1974','MM-DD-YYYY')+TRUNC(DBMS_RANDOM.VALUE(0,365));
+--        insert into comenzi values(v_i,v_clienti,v_data);
+--    end loop;
+--    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela comenzi... GATA !');
 
 
 --detalii comenzi
@@ -334,21 +334,21 @@ BEGIN
 
 
 --facturi
---DBMS_OUTPUT.PUT_LINE('Inserarea in tabela facturi...');
---    open lista_id_furnizori;
---    FOR v_i IN 1..5000 LOOP
---        fetch lista_id_furnizori into v_furnizori;
---        exit when lista_id_furnizori%NOTFOUND;
---        v_data := TO_DATE('01-01-1974','MM-DD-YYYY')+TRUNC(DBMS_RANDOM.VALUE(0,365));
---        LOOP 
---           v_plata := TRUNC(DBMS_RANDOM.VALUE(0,99999))+1;
---           select count(*) into v_temp from facturi where id_furnizor=v_furnizori and total_plata=v_plata;
---           exit when v_temp < 30;
---        END LOOP;
---        insert into facturi values(v_i,v_data,v_furnizori,v_plata);
---    END LOOP;
---    close lista_id_furnizori;
---    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela facturi... GATA !');
+DBMS_OUTPUT.PUT_LINE('Inserarea in tabela facturi...');
+    open lista_id_furnizori;
+    FOR v_i IN 1..5000 LOOP
+        fetch lista_id_furnizori into v_furnizori;
+        exit when lista_id_furnizori%NOTFOUND;
+        v_data := TO_DATE('01-01-1974','MM-DD-YYYY')+TRUNC(DBMS_RANDOM.VALUE(0,365));
+        LOOP 
+           v_plata := TRUNC(DBMS_RANDOM.VALUE(0,99999))+1;
+           select count(*) into v_temp from facturi where id_furnizor=v_furnizori and total_plata=v_plata;
+           exit when v_temp < 30;
+        END LOOP;
+        insert into facturi values(v_i,v_data,v_furnizori,v_plata);
+    END LOOP;
+    close lista_id_furnizori;
+    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela facturi... GATA !');
     
     
 --reduceri
@@ -364,7 +364,7 @@ END;
 
 
 select * from clienti;
-select * from produse where id=3619;
+select * from produse;
 select * from tip_articole;
 select * from comenzi;
 select * from detalii_comenzi;
