@@ -101,7 +101,7 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="http://en.mazzonigroup.com/wp-content/uploads/sites/122/2016/12/pere-purea.jpg"
+                        <img src="https://en.mazzonigroup.com/wp-content/uploads/sites/122/2016/12/pere-purea.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
