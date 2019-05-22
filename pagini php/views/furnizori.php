@@ -1,3 +1,15 @@
+<?php
+function getFurnizori($id,$name)
+{
+    $conn=oci_connect("PROIECT","PROIECT","localhost/XE");
+    $result = oci_parse($conn, "SELECT * FROM furnizori where id like '".$id."'");
+    oci_execute($result);
+    while($row = oci_fetch_array($result))
+    {
+        echo $row [$name];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,43 +68,43 @@
                 </div>
                 <ul class="list_furnizori">
                     <li class="furnizor">
-                        <span>Nume intreprindere / E-mail / Adresa / Telefon</span>
+                        <span> <?php getFurnizori(1,'NUME_FURNIZOR') ; ?>/ E-mail / Adresa / Telefon</span>
                         <button class="delete_button">
                             Delete
                         </button>
                     </li>
                     <li class="furnizor">
-                        <span>Nume intreprindere / E-mail / Adresa / Telefon</span>
+                        <span><?php getFurnizori(2,'NUME_FURNIZOR') ; ?>/ E-mail / Adresa / Telefon</span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span>Nume intreprindere / E-mail / Adresa / Telefon </span>
+                        <span><?php getFurnizori(3,'NUME_FURNIZOR') ; ?> / E-mail / Adresa / Telefon </span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span>Nume intreprindere / E-mail / Adresa / Telefon </span>
+                        <span><?php getFurnizori(4,'NUME_FURNIZOR') ; ?> / E-mail / Adresa / Telefon </span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span>Nume intreprindere / E-mail / Adresa / Telefon </span>
+                        <span><?php getFurnizori(5,'NUME_FURNIZOR') ; ?> / E-mail / Adresa / Telefon </span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span>Nume intreprindere / E-mail / Adresa / Telefon </span>
+                        <span><?php getFurnizori(6,'NUME_FURNIZOR') ; ?>/ E-mail / Adresa / Telefon </span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span>Nume intreprindere / E-mail / Adresa / Telefon </span>
+                        <span><?php getFurnizori(7,'NUME_FURNIZOR') ; ?> / E-mail / Adresa / Telefon </span>
                         <button class="delete_button">
                                 Delete
                             </button>

@@ -16,14 +16,14 @@ DROP TABLE facturi CASCADE CONSTRAINTS
 /
 
 CREATE TABLE clienti (
-  email VARCHAR2(40) primary key,
+  email VARCHAR2(100) NOT NULL PRIMARY KEY,
   nume VARCHAR2(15) NOT NULL,
   prenume VARCHAR2(30) NOT NULL,
   strada VARCHAR(300) ,
-  bloc VARCHAR(2),
+  bloc VARCHAR(10),
   apartament NUMBER(5),
   telefon NUMBER(10),
-  parola varchar2(40)
+  parola VARCHAR(20)
 )
 /
 
@@ -36,7 +36,7 @@ CREATE TABLE tip_articole (
 CREATE TABLE produse (
   id INT NOT NULL PRIMARY KEY,
   id_articol INT NOT NULL,
-  id_reducere INT NOT NULL,
+  id_reducere INT,
   nume_produs VARCHAR2(60),
   pret NUMBER(3),
   numar_bucati NUMBER(10),
@@ -44,12 +44,12 @@ CREATE TABLE produse (
   FOREIGN KEY (id_reducere) REFERENCES reduceri(id)
   )
   /
-
-CREATE TABLE comenzi (
+  
+  CREATE TABLE comenzi (
   id INT NOT NULL PRIMARY KEY,
-  id_client INT NOT NULL,
+  id_client varchar2(60) NOT NULL,
   data_comanda DATE,
-  FOREIGN KEY (id_client) REFERENCES clienti(id)
+  FOREIGN KEY (id_client) REFERENCES clienti(email)
 )
 /
 
@@ -96,7 +96,7 @@ DECLARE
   lista_prenume_baieti varr := varr('Adrian','Alex','Alexandru','Alin','Andreas','Andrei','Aurelian','Beniamin','Bogdan','Camil','Catalin','Cezar','Ciprian','Claudiu','Codrin','Constantin','Corneliu','Cosmin','Costel','Cristian','Damian','Dan','Daniel','Danut','Darius','Denise','Dimitrie','Dorian','Dorin','Dragos','Dumitru','Eduard','Elvis','Emil','Ervin','Eugen','Eusebiu','Fabian','Filip','Florian','Florin','Gabriel','George','Gheorghe','Giani','Giulio','Iaroslav','Ilie','Ioan','Ion','Ionel','Ionut','Iosif','Irinel','Iulian','Iustin','Laurentiu','Liviu','Lucian','Marian','Marius','Matei','Mihai','Mihail','Nicolae','Nicu','Nicusor','Octavian','Ovidiu','Paul','Petru','Petrut','Radu','Rares','Razvan','Richard','Robert','Roland','Rolland','Romanescu','Sabin','Samuel','Sebastian','Sergiu','Silviu','Stefan','Teodor','Teofil','Theodor','Tudor','Vadim','Valentin','Valeriu','Vasile','Victor','Vlad','Vladimir','Vladut');
   lista_strazi varr :=varr('Februarie','Martie','Soare','Bucurie','Fericire');
   lista_telefon varr := varr('0786231224','0786089310','0786089303','0786231225','0786089304','0786089300','0786089305','0786089307','0786089309','0786089311','0786089312','0786089313','0786231227','0786089314','0786089301','0786089302','0786089308','0786089308','0786231226');
-  lista_furnizori varr := varr('Agroindustriala Bucium', 'Alexandrion Grup','Alira','Angelli Spumante','Bachus','Cotnari','Cramele Reca?','Domeniile Tohani','Euroavipo','Global Spirits','Halewood Rom�nia', 'Indagrara','Jidvei','Murfatlar','Ostrovit','Prodal', 'Prodvinalco','Romanian Drinks Service', 'Senator Wine Rom�nia','Veritas''Panciu', 'Vinarte' ,'Vincon', 'Vrancea' ,'Vineport', 'Vinia' ,'Vinterra' ,'Zarea','Coca-Cola','Mega','Adria','Selgros','Bila','Market');
+  lista_furnizori varr := varr('Agroindustriala Bucium', 'Alexandrion Grup','Alira','Angelli Spumante','Bachus','Cotnari','Cramele Reca?','Domeniile Tohani','Euroavipo','Global Spirits','Halewood România', 'Indagrara','Jidvei','Murfatlar','Ostrovit','Prodal', 'Prodvinalco','Romanian Drinks Service', 'Senator Wine România','Veritas''Panciu', 'Vinarte' ,'Vincon', 'Vrancea' ,'Vineport', 'Vinia' ,'Vinterra' ,'Zarea','Coca-Cola','Mega','Adria','Selgros','Bila','Market');
 
       
   v_nume VARCHAR2(255);
@@ -109,7 +109,7 @@ DECLARE
   v_telefon int;
   v_bloc varchar2(2);
   v_apartament int;
-  v_email varchar2(40);
+  v_email varchar2(100);
   v_parola varchar2(40);
 
   v_im int;
@@ -118,11 +118,14 @@ DECLARE
   v_plata int;
   
   v_categorie VARCHAR2(30);
-  v_id clienti.id%type; --
+  v_id int; --
   v_articol tip_articole.id%type;
   v_reduceri reduceri.id%type;
   v_comenzi comenzi.id%type; --
-  v_clienti clienti.id%type;
+
+--  v_clienti clienti.id%type;
+    v_clienti varchar2(60);
+
   v_produse produse.id%type;
   v_furnizori furnizori.id%type;
   
@@ -141,15 +144,15 @@ DECLARE
   lista_produse_curetenie varr := varr('detergent', 'în?lbitori pentru rufe', 'produse anticalcar', 'detergenti pentru masina de spalat vase', ' detergent baie', 'detergent buc?t?rie ','detergent vase', 'creme', 'prafuri','lavete','bure?i', 'odorizante înc?peri', 'insecticide', 'm?nu?i','sac menajer');
   lista_produse_menajer varr := varr('ceramic', 'portelan', 'servicii de cafea', ' servicii ceai' ,'cadouri', 'lampi decorative', 'sfesnice', 'articole din sticla', 'bambus', 'ratan', 'fier forjat', 'tablouri','ceasuri', 'termometre', 'mese de calcat', 'uscatoare de rufe', 'huse pentru depozitare', 'huse si rafturi pentru pantofi', 'cutii pliabile','uscatoare de vesela', 'castroane', 'site','placi de tocat', 'tavi', 'capace', 'oale', 'cratite', 'tigai', 'ustensile', 'forme de copt','accesorii','tacâmuri', 'cutite','ustensile profesionale','halbe de bere', 'cupe de înghetata', 'boluri pentru gheata', 'carafe', 'scrumiere');
  
-  lista_reducere varr := varr('RED10%','RED20%','RED30%','RED40%','RED50%','RED60%','RED70%','RED80%','RED90%','RED100%','RED10%','RED15%','RED25%','RED35%','RED45%','RED55%','RED65%','RED75%','RED85%','RED95%');
+  lista_reducere varr := varr('10','20','30','40','50','60','70','80','90','100','10','15','25','35','45','55','65','75','85','95','5','17');
   id_categorie_produs int;
   v_nume_produs VARCHAR2(60);
   v_pret int;
   nr_bucati number(10);
   id_val number(10);
-  v_reducere VARCHAR2(10);
+  v_reducere number(10);
   
-  CURSOR lista_clienti IS SELECT id FROM clienti;
+  CURSOR lista_clienti IS SELECT email FROM clienti;
   CURSOR lista_id_articol IS SELECT id FROM tip_articole;
   CURSOR lista_id_reduceri IS SELECT id FROM reduceri;
   CURSOR lista_produse IS SELECT id FROM produse;
@@ -159,59 +162,59 @@ DECLARE
 BEGIN
 
 --clienti
-
-   DBMS_OUTPUT.PUT_LINE('Inserarea in tabela clienti...');
-   FOR v_i IN 1..10000 LOOP
-      v_nume := lista_nume(TRUNC(DBMS_RANDOM.VALUE(0,lista_nume.count))+1);
-      IF (DBMS_RANDOM.VALUE(0,100)<50) THEN      
-         v_prenume1 := lista_prenume_fete(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_fete.count))+1);
-         LOOP
-            v_prenume2 := lista_prenume_fete(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_fete.count))+1);
-            exit when v_prenume1<>v_prenume2;
-         END LOOP;
-       ELSE
-         v_prenume1 := lista_prenume_baieti(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_baieti.count))+1);
-         LOOP
-            v_prenume2 := lista_prenume_baieti(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_baieti.count))+1);
-            exit when v_prenume1<>v_prenume2;
-         END LOOP;
-       END IF;
-
-     IF (DBMS_RANDOM.VALUE(0,100)<60) THEN  
-        IF LENGTH(v_prenume1 || ' ' || v_prenume2) <= 20 THEN
-          v_prenume := v_prenume1 || ' ' || v_prenume2;
-        END IF;
-        else 
-           v_prenume:=v_prenume1;
-      END IF;
-
-      LOOP  
-        v_strada := lista_strazi(TRUNC(DBMS_RANDOM.VALUE(0,lista_strazi.count))+1);
-        v_bloc := chr(TRUNC(DBMS_RANDOM.VALUE(0,20))+65) || chr(TRUNC(DBMS_RANDOM.VALUE(0,8))+49);
-        v_apartament := TRUNC(DBMS_RANDOM.VALUE(0,99))+1;
-        v_telefon := lista_telefon(TRUNC(DBMS_RANDOM.VALUE(0,lista_telefon.count))+1);
-
-        select count(*) into v_temp from clienti where strada=v_strada and bloc=v_bloc and apartament=v_apartament and telefon=v_telefon;
-        exit when v_temp < 30;
-      END LOOP;
-      
-      v_temp:='';
-      v_email := lower(v_nume ||'.'|| v_prenume1);
-      v_parola:= lista_nume(TRUNC(DBMS_RANDOM.VALUE(0,lista_nume.count))+1);
-      LOOP         
-         select count(*) into v_temp from clienti where email = v_email||v_temp;
-         exit when v_temp=0;
-         v_temp :=  TRUNC(DBMS_RANDOM.VALUE(0,100));
-      END LOOP;    
-      
-      if (TRUNC(DBMS_RANDOM.VALUE(0,5))=0) then v_email := v_email ||'@gmail.com';
-         else v_email := v_email ||'@info.ro';
-      end if;
-
-      insert into clienti values(v_email, v_nume, v_prenume,v_strada, v_bloc,v_apartament, v_telefon,v_parola);
-      DBMS_OUTPUT.PUT_LINE(v_email || v_nume || v_prenume || v_strada || v_bloc || v_apartament || v_telefon || v_parola);
-   END LOOP;
-   DBMS_OUTPUT.PUT_LINE('Inserarea in tabela clienti... GATA !');
+--
+--   DBMS_OUTPUT.PUT_LINE('Inserarea in tabela clienti...');
+--   FOR v_i IN 1..100000 LOOP
+--      v_nume := lista_nume(TRUNC(DBMS_RANDOM.VALUE(0,lista_nume.count))+1);
+--      IF (DBMS_RANDOM.VALUE(0,100)<50) THEN      
+--         v_prenume1 := lista_prenume_fete(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_fete.count))+1);
+--         LOOP
+--            v_prenume2 := lista_prenume_fete(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_fete.count))+1);
+--            exit when v_prenume1<>v_prenume2;
+--         END LOOP;
+--       ELSE
+--         v_prenume1 := lista_prenume_baieti(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_baieti.count))+1);
+--         LOOP
+--            v_prenume2 := lista_prenume_baieti(TRUNC(DBMS_RANDOM.VALUE(0,lista_prenume_baieti.count))+1);
+--            exit when v_prenume1<>v_prenume2;
+--         END LOOP;
+--       END IF;
+--
+--     IF (DBMS_RANDOM.VALUE(0,100)<60) THEN  
+--        IF LENGTH(v_prenume1 || ' ' || v_prenume2) <= 20 THEN
+--          v_prenume := v_prenume1 || ' ' || v_prenume2;
+--        END IF;
+--        else 
+--           v_prenume:=v_prenume1;
+--      END IF;
+--
+--      LOOP  
+--        v_strada := lista_strazi(TRUNC(DBMS_RANDOM.VALUE(0,lista_strazi.count))+1);
+--        v_bloc := chr(TRUNC(DBMS_RANDOM.VALUE(0,20))+65) || chr(TRUNC(DBMS_RANDOM.VALUE(0,8))+49);
+--        v_apartament := TRUNC(DBMS_RANDOM.VALUE(0,99))+1;
+--        v_telefon := lista_telefon(TRUNC(DBMS_RANDOM.VALUE(0,lista_telefon.count))+1);
+--
+--        select count(*) into v_temp from clienti where strada=v_strada and bloc=v_bloc and apartament=v_apartament and telefon=v_telefon;
+--        exit when v_temp < 30;
+--      END LOOP;
+--      
+--      v_temp:='';
+--      v_email := lower(v_nume ||'.'|| v_prenume1 || v_i);
+--      v_parola:= lista_nume(TRUNC(DBMS_RANDOM.VALUE(0,lista_nume.count))+1);
+--      LOOP         
+--         select count(*) into v_temp from clienti where email = v_email||v_temp;
+--         exit when v_temp=0;
+--         v_temp :=  TRUNC(DBMS_RANDOM.VALUE(0,100));
+--      END LOOP;    
+--      
+--      if (TRUNC(DBMS_RANDOM.VALUE(0,5))=0) then v_email := v_email ||'@gmail.com';
+--         else v_email := v_email ||'@info.ro';
+--      end if;
+--
+--      insert into clienti values(v_email, v_nume, v_prenume,v_strada, v_bloc,v_apartament, v_telefon,v_parola);
+----      DBMS_OUTPUT.PUT_LINE(v_email || v_nume || v_prenume || v_strada || v_bloc || v_apartament || v_telefon || v_parola);
+--   END LOOP;
+--   DBMS_OUTPUT.PUT_LINE('Inserarea in tabela clienti... GATA !');
 
 ----tip_articole
 --   DBMS_OUTPUT.PUT_LINE('Inserarea tipurilor articolelor...');
@@ -331,21 +334,21 @@ BEGIN
 
 
 --facturi
---DBMS_OUTPUT.PUT_LINE('Inserarea in tabela facturi...');
---    open lista_id_furnizori;
---    FOR v_i IN 1..5000 LOOP
---        fetch lista_id_furnizori into v_furnizori;
---        exit when lista_id_furnizori%NOTFOUND;
---        v_data := TO_DATE('01-01-1974','MM-DD-YYYY')+TRUNC(DBMS_RANDOM.VALUE(0,365));
---        LOOP 
---           v_plata := TRUNC(DBMS_RANDOM.VALUE(0,99999))+1;
---           select count(*) into v_temp from facturi where id_furnizor=v_furnizori and total_plata=v_plata;
---           exit when v_temp < 30;
---        END LOOP;
---        insert into facturi values(v_i,v_data,v_furnizori,v_plata);
---    END LOOP;
---    close lista_id_furnizori;
---    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela facturi... GATA !');
+DBMS_OUTPUT.PUT_LINE('Inserarea in tabela facturi...');
+    open lista_id_furnizori;
+    FOR v_i IN 1..5000 LOOP
+        fetch lista_id_furnizori into v_furnizori;
+        exit when lista_id_furnizori%NOTFOUND;
+        v_data := TO_DATE('01-01-1974','MM-DD-YYYY')+TRUNC(DBMS_RANDOM.VALUE(0,365));
+        LOOP 
+           v_plata := TRUNC(DBMS_RANDOM.VALUE(0,99999))+1;
+           select count(*) into v_temp from facturi where id_furnizor=v_furnizori and total_plata=v_plata;
+           exit when v_temp < 30;
+        END LOOP;
+        insert into facturi values(v_i,v_data,v_furnizori,v_plata);
+    END LOOP;
+    close lista_id_furnizori;
+    DBMS_OUTPUT.PUT_LINE('Inserarea in tabela facturi... GATA !');
     
     
 --reduceri
@@ -358,6 +361,7 @@ BEGIN
 
 END;
 /
+
 
 select * from clienti;
 select * from produse;
