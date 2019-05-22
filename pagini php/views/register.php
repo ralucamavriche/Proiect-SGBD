@@ -22,7 +22,7 @@ if( $numberofrows == 1 ){
 }else{
   $sql =oci_parse($conn,"INSERT INTO clienti VALUES ('$email', '$nume', '$prenume','$strada', '$bloc','$apartament', '$telefon', '$parola')");
   oci_execute($sql);
-  header('location:index.php');
+  header('location:produse.php');
 }
 }
 ?>

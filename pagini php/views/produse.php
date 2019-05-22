@@ -100,7 +100,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(18,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -130,7 +130,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(12,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -159,7 +159,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(13,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -188,7 +188,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(15,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -216,7 +216,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(22,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -244,7 +244,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(17,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -272,7 +272,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(18,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -300,7 +300,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(19,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -328,7 +328,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(23,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>
@@ -356,7 +356,7 @@ oci_close($conn);
                         <h2>Cantitate:  <?php getDataForProdus(21,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
-                        <button class="btn normal" type="button">
+                        <button class="btn normal" onclick="location.href=' comanda.php'" type="button">
                             Cumpara
                         </button>
                     </div>

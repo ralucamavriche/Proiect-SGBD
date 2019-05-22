@@ -106,7 +106,7 @@ $numberofrows = oci_num_rows($result);
 oci_free_statement($result);
 
 if( $numberofrows >= 1 ){
-  header('location:index.php');
+  header('location:produse.php');
 }else{
   header('location:login.php');
 }
