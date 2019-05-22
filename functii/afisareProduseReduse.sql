@@ -1,5 +1,5 @@
 CREATE OR REPLACE procedure afisare_produse_reduse
-(v_id IN INT, v_comanda IN VARCHAR2)
+(v_id IN INT, v_comanda IN VARCHAR2, v_raspuns out varchar2)
 AS 
     v_nume varchar2(60);
     cursor c_id_reducere is SELECT id_reducere FROM produse where id_reducere is not null and id=v_id;
@@ -21,29 +21,32 @@ BEGIN
     v_pret_redus := v_pret- (v_procent/100)*v_pret;
     
 IF upper(v_comanda)='NUME_PRODUS' then
-        dbms_output.put_line( v_nume);
+        v_raspuns := v_nume;
     end if;
 IF upper(v_comanda)='ID_ARTICOL' THEN
-        dbms_output.put_line( v_id_articol);
+        v_raspuns := v_id_articol;
         end if;
 IF upper(v_comanda)='ID_REDUCERE' THEN
-        dbms_output.put_line(v_id_red);
+        v_raspuns := v_id_red;
         end if;
 IF upper(v_comanda)='PRET' THEN
-        dbms_output.put_line(v_pret);
+        v_raspuns := v_pret;
         end if;
 IF upper(v_comanda)='NUMAR_BUCATI' THEN
-        dbms_output.put_line(v_numar_bucati);
+        v_raspuns := v_numar_bucati;
         end if;
 IF upper(v_comanda)='PRET_REDUS' THEN
-        dbms_output.put_line(v_pret_redus);
+        v_raspuns := v_pret_redus;
         end if;
         
 close c_id_reducere;
 END;
 
 set serveroutput on;
+declare 
+v_out varchar2(100);
 begin
-    afisare_produse_reduse(3619,'PRET_REDUS');
+    afisare_produse_reduse(3619,'NUMAR_BUCATI',v_out);
+    DBMS_OUTPUT.PUT_LINE(v_out);
 end;
 
