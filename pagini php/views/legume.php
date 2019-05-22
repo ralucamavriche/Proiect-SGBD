@@ -1,3 +1,26 @@
+<?php
+function getCategorie($v_id,$v_comanda)
+{
+$conn=oci_connect("PROIECT","PROIECT","localhost/XE");
+if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message']), E_USER_ERROR);
+}
+
+$stid = oci_parse($conn, 'begin :r := afisare_tip_articole(:v_id,:v_comanda); end;');
+oci_bind_by_name($stid, ':v_id', $v_id);
+oci_bind_by_name($stid, ':v_comanda', $v_comanda);
+
+oci_bind_by_name($stid, ':r', $r, 40);
+oci_execute($stid);
+
+print "$r";
+
+oci_free_statement($stid);
+oci_close($conn);
+}
+getCategorie(354,'TIP_ARTICOL');
+?>
 <!DOCTYPE html>
 <html lang="en">
 

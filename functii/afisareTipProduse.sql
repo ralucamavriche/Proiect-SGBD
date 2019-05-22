@@ -1,6 +1,6 @@
-CREATE OR REPLACE procedure afisare_tip_articole
-(v_id IN INT, v_comanda IN VARCHAR2, v_raspuns OUT varchar2)
-AS 
+ CREATE OR REPLACE function afisare_tip_articole
+(v_id IN INT, v_comanda IN VARCHAR2) RETURN VARCHAR2
+IS
     v_nume varchar2(60);
     cursor c_id_articol is select id_articol from produse where id=v_id;
    vv_id int;
@@ -22,29 +22,26 @@ BEGIN
 
     
 IF upper(v_comanda)='TIP_ARTICOL' then
-        v_raspuns := v_tip;
+        RETURN v_tip;
     end if;
 IF upper(v_comanda)='ID_REDUCERE' THEN
-        v_raspuns := v_id_reducere;
+        RETURN v_id_reducere;
         end if;
 IF upper(v_comanda)='NUME_PRODUS' THEN
-        v_raspuns := v_nume;
+       RETURN v_nume;
         end if;
 IF upper(v_comanda)='PRET' THEN
-        v_raspuns := v_pret;
+       RETURN v_pret;
         end if;
 IF upper(v_comanda)='NUMAR_BUCATI' THEN
-        v_raspuns := v_numar_bucati;
+       RETURN v_numar_bucati;
         end if;
         
 close c_id_articol;
 END;
 
 set serveroutput on;
-declare 
-v_out varchar2(100);
 begin
-    afisare_tip_articole(3619,'TIP_ARTICOL',v_out);
-    DBMS_OUTPUT.PUT_LINE(v_out);
+    DBMS_OUTPUT.PUT_LINE(afisare_tip_articole(3619,'TIP_ARTICOL'));
 end;
 
