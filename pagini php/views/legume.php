@@ -80,15 +80,15 @@ oci_close($conn);
                     </div>
                     <div class="articleTitle">
                         <h2>
-                           <?php getCategorie(1,'NUME_PRODUS'); ?>
+                           <?php getCategorie(21223344,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(21223344,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(21223344,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -109,16 +109,16 @@ oci_close($conn);
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getCategorie(1,'NUME_PRODUS'); ?>
+                        <?php getCategorie(21223345,'NUME_PRODUS'); ?>
 
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(21223345,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(21223345,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -139,16 +139,16 @@ oci_close($conn);
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getCategorie(1,'NUME_PRODUS'); ?>
+                        <?php getCategorie(21223346,'NUME_PRODUS'); ?>
 
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(21223346,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(21223346,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -173,10 +173,10 @@ oci_close($conn);
                         </div>
                         <div class="pret">
                                 <h1>Subtotal:</h1>
-                                <?php getCategorie(1,'PRET'); ?> Lei
+                                <?php getCategorie(21223347,'PRET'); ?> Lei
                         </div>
                         <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(21223347,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                         <div class="buyButton">
                             <button class="btn normal" type="button">

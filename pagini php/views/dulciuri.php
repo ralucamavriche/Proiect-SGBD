@@ -168,7 +168,7 @@ oci_close($conn);
                         </div>
                         <div class="articleTitle">
                             <h2>
-                            <?php getCategorie(112233475,'NUME_PRODUS'); ?> Lei
+                            <?php getCategorie(112233475,'NUME_PRODUS'); ?>
                             </h2>
                         </div>
                         <div class="pret">

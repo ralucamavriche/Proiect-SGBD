@@ -139,7 +139,7 @@ oci_close($conn);
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getCategorie(11223346,'NUME_PRODUS'); ?>
+                        <?php getCategorie(21223346,'NUME_PRODUS'); ?>
 
                         </h2>
                     </div>
