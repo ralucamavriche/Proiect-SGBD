@@ -80,15 +80,15 @@ oci_close($conn);
                     </div>
                     <div class="articleTitle">
                         <h2>
-                           <?php getCategorie(1,'NUME_PRODUS'); ?>
+                           <?php getCategorie(112233445,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(112233445,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(112233445,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -109,16 +109,16 @@ oci_close($conn);
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getCategorie(1,'NUME_PRODUS'); ?>
+                        <?php getCategorie(112233455,'NUME_PRODUS'); ?>
 
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(112233455,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(112233455,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -139,16 +139,16 @@ oci_close($conn);
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getCategorie(1,'NUME_PRODUS'); ?>
+                        <?php getCategorie(112233465,'NUME_PRODUS'); ?>
 
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(112233465,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(112233465,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -168,15 +168,15 @@ oci_close($conn);
                         </div>
                         <div class="articleTitle">
                             <h2>
-                                Fructe
+                            <?php getCategorie(112233475,'NUME_PRODUS'); ?> Lei
                             </h2>
                         </div>
                         <div class="pret">
                                 <h1>Subtotal:</h1>
-                                <?php getCategorie(1,'PRET'); ?> Lei
+                                <?php getCategorie(112233475,'PRET'); ?> Lei
                         </div>
                         <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(112233475,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                         <div class="buyButton">
                             <button class="btn normal" type="button">
@@ -277,64 +277,6 @@ oci_close($conn);
                             </div>
                         </div>
                     </div>
-
-                    <!-- <div class="pageRecentPosts">
-          <div class="recentPosts">
-            <div class="recentTitlePosts">
-              <span>Postari Recente</span>
-            </div>
-            <div class="recentBody">
-              <a href="#">
-                <div class="recentContainer">
-                  <div class="recentImg">
-                    <img
-                      src="https://www.joslin.org/images/hp-news-icon.png"
-                      alt="recentPost"
-                    />
-                  </div>
-                  <div class="recentDescription">
-                    The best title ever Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Aliquid blanditiis natus, atque
-                    repellendus voluptates molestias quaerat ducimus fuga nisi,
-                    excepturi eum...
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="recentContainer">
-                  <div class="recentImg">
-                    <img
-                      src="https://www.joslin.org/images/hp-news-icon.png"
-                      alt="recentPost"
-                    />
-                  </div>
-                  <div class="recentDescription">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptates, adipisci atque nihil sint iste aperiam
-                    distinctio est minima architecto tempore quae at cumque a
-                    quasi illo accusamus necessitatibus minus quia?
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="recentContainer">
-                  <div class="recentImg">
-                    <img
-                      src="https://www.joslin.org/images/hp-news-icon.png"
-                      alt="recentPost"
-                    />
-                  </div>
-                  <div class="recentDescription">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Temporibus laboriosam nostrum dignissimos, minus quasi
-                    impedit asperiores in facere incidunt delectus non sed ut
-                    autem ab quas nemo neque earum ea!
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div> -->
         </section>
     </article>
     <aside></aside>

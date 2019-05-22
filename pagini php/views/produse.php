@@ -178,6 +178,174 @@ function getDataForProdus($id,$name)
                         </button>
                     </div>
                 </div>
+                <div class="articleContainer">
+                    <div class="articleImg">
+                        <img src="https://i.pinimg.com/originals/d5/ed/37/d5ed37b57f006af4ba1433baac7617e8.jpg"
+                            alt="imgPost" />
+                    </div>
+                    <div class="articleTitle">
+                        <h2>
+                            <?php getDataForProdus(22,'NUME_PRODUS'); ?>
+                        </h2>
+                    </div>
+                    <div class="pret">
+                        <h1>Subtotal:</h1>
+                        <?php getDataForProdus(22,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getDataForProdus(22,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
+                <div class="articleContainer">
+                    <div class="articleImg">
+                        <img src="https://d27ucmmhxk51xv.cloudfront.net/media/english/illustration/nectarine.jpg?version=1.1.86"
+                            alt="imgPost" />
+                    </div>
+                    <div class="articleTitle">
+                        <h2>
+                            <?php getDataForProdus(17,'NUME_PRODUS'); ?>
+                        </h2>
+                    </div>
+                    <div class="pret">
+                        <h1>Subtotal:</h1>
+                        <?php getDataForProdus(17,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getDataForProdus(17,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
+                <div class="articleContainer">
+                    <div class="articleImg">
+                        <img src="https://www.marketgradimex.ro/wp-content/uploads/2018/09/ATIFCO-OREZ-BOB-LUNG-1KG-PREMIUM.jpg"
+                            alt="imgPost" />
+                    </div>
+                    <div class="articleTitle">
+                        <h2>
+                            <?php getDataForProdus(18,'NUME_PRODUS'); ?>
+                        </h2>
+                    </div>
+                    <div class="pret">
+                        <h1>Subtotal:</h1>
+                        <?php getDataForProdus(18,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getDataForProdus(18,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
+                <div class="articleContainer">
+                    <div class="articleImg">
+                        <img src="http://www.oceanfish.ro/oceanfish/files/assets/thumbs_400_400/204526d5f7432126e37e2a51e037cb30.jpg"
+                            alt="imgPost" />
+                    </div>
+                    <div class="articleTitle">
+                        <h2>
+                            <?php getDataForProdus(19,'NUME_PRODUS'); ?>
+                        </h2>
+                    </div>
+                    <div class="pret">
+                        <h1>Subtotal:</h1>
+                        <?php getDataForProdus(19,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getDataForProdus(19,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
+                <div class="articleContainer">
+                    <div class="articleImg">
+                        <img src="https://comenzi.farmaciatei.ro/images/products/comenzi.farmaciatei.ro/soia-boabe-1-kg-sanovita-10037867.jpg"
+                            alt="imgPost" />
+                    </div>
+                    <div class="articleTitle">
+                        <h2>
+                            <?php getDataForProdus(23,'NUME_PRODUS'); ?>
+                        </h2>
+                    </div>
+                    <div class="pret">
+                        <h1>Subtotal:</h1>
+                        <?php getDataForProdus(23,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getDataForProdus(23,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
+                <div class="articleContainer">
+                    <div class="articleImg">
+                        <img src="http://www.france-export-fv.com/WebRoot/Orange/Shops/6449c484-4b17-11e1-a012-000d609a287c/574C/05DE/3476/12FD/9023/D580/9A38/705E/fruits_du_verger.jpg"
+                            alt="imgPost" />
+                    </div>
+                    <div class="articleTitle">
+                        <h2>
+                            <?php getDataForProdus(21,'NUME_PRODUS'); ?>
+                        </h2>
+                    </div>
+                    <div class="pret">
+                        <h1>Subtotal:</h1>
+                        <?php getDataForProdus(21,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getDataForProdus(21,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
 
             </div>
             <div class="pageOptions">
@@ -213,7 +381,7 @@ function getDataForProdus($id,$name)
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="fructe.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -226,7 +394,7 @@ function getDataForProdus($id,$name)
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="carne.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -239,7 +407,7 @@ function getDataForProdus($id,$name)
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="dulciuri.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -252,7 +420,7 @@ function getDataForProdus($id,$name)
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="bauturi.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>

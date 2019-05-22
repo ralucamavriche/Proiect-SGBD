@@ -207,6 +207,19 @@ oci_close($conn);
                     </div>
                     <div class="categoriesBody">
                         <div class="categoriesContainer">
+                            <a href="produse.php">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    All
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    10
+                                </span>
+                            </a>
+                        </div>
+                        <div class="categoriesContainer">
                             <a href="legume.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
@@ -220,7 +233,7 @@ oci_close($conn);
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="fructe.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -233,7 +246,7 @@ oci_close($conn);
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="carne.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -246,7 +259,7 @@ oci_close($conn);
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="dulciuri.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -259,7 +272,7 @@ oci_close($conn);
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="bauturi.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
