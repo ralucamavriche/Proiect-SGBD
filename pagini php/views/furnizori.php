@@ -31,9 +31,6 @@ function getFurnizori($id,$name)
         <nav>
             <ul class="main">
                 <li>
-                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
-                </li>
-                <li>
                 <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
 
@@ -68,43 +65,43 @@ function getFurnizori($id,$name)
                 </div>
                 <ul class="list_furnizori">
                     <li class="furnizor">
-                        <span> <?php getFurnizori(1,'NUME_FURNIZOR') ; ?>/ E-mail / Adresa / Telefon</span>
+                        <span> <?php getFurnizori(1,'NUME_FURNIZOR') ; ?>/ <?php getFurnizori(1,'ID_PRODUS') ; ?>/ <?php getFurnizori(1,'NUMAR_BUCATI_PRODUSE') ; ?></span>
                         <button class="delete_button">
                             Delete
                         </button>
                     </li>
                     <li class="furnizor">
-                        <span><?php getFurnizori(2,'NUME_FURNIZOR') ; ?>/ E-mail / Adresa / Telefon</span>
+                    <span> <?php getFurnizori(2,'NUME_FURNIZOR') ; ?>/ <?php getFurnizori(2,'ID_PRODUS') ; ?>/ <?php getFurnizori(2,'NUMAR_BUCATI_PRODUSE') ; ?></span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span><?php getFurnizori(3,'NUME_FURNIZOR') ; ?> / E-mail / Adresa / Telefon </span>
+                    <span> <?php getFurnizori(3,'NUME_FURNIZOR') ; ?>/ <?php getFurnizori(3,'ID_PRODUS') ; ?> / <?php getFurnizori(3,'NUMAR_BUCATI_PRODUSE') ; ?> </span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span><?php getFurnizori(4,'NUME_FURNIZOR') ; ?> / E-mail / Adresa / Telefon </span>
+                    <span> <?php getFurnizori(4,'NUME_FURNIZOR') ; ?>/ <?php getFurnizori(4,'ID_PRODUS') ; ?> / <?php getFurnizori(4,'NUMAR_BUCATI_PRODUSE') ; ?> </span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span><?php getFurnizori(5,'NUME_FURNIZOR') ; ?> / E-mail / Adresa / Telefon </span>
+                    <span> <?php getFurnizori(5,'NUME_FURNIZOR') ; ?>/ <?php getFurnizori(5,'ID_PRODUS') ; ?> / <?php getFurnizori(5,'NUMAR_BUCATI_PRODUSE') ; ?> </span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span><?php getFurnizori(6,'NUME_FURNIZOR') ; ?>/ E-mail / Adresa / Telefon </span>
+                    <span> <?php getFurnizori(6,'NUME_FURNIZOR') ; ?>/ <?php getFurnizori(6,'ID_PRODUS') ; ?> / <?php getFurnizori(6,'NUMAR_BUCATI_PRODUSE') ; ?> </span>
                         <button class="delete_button">
                                 Delete
                             </button>
                     </li>
                     <li class="furnizor">
-                        <span><?php getFurnizori(7,'NUME_FURNIZOR') ; ?> / E-mail / Adresa / Telefon </span>
+                    <span> <?php getFurnizori(7,'NUME_FURNIZOR') ; ?>/ <?php getFurnizori(7,'ID_PRODUS') ; ?> / <?php getFurnizori(7,'NUMAR_BUCATI_PRODUSE') ; ?> </span>
                         <button class="delete_button">
                                 Delete
                             </button>

@@ -41,9 +41,6 @@ oci_close($conn);
         <nav>
             <ul class="main">
                 <li>
-                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
-                </li>
-                <li>
                 <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
                 <li>
@@ -75,7 +72,7 @@ oci_close($conn);
             <div class="articles">
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.wrapfoods.ro/wp-content/uploads/2018/08/fanta-orange-500.png"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -104,7 +101,7 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://target.scene7.com/is/image/Target/GUEST_34c0199c-08f7-4789-a3e7-f1c7c7f5bc20"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -134,7 +131,7 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.myamericanmarket.com/945-large_default/pepsi-wild-cherry-soda.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -163,7 +160,7 @@ oci_close($conn);
                     </div>
                     <div class="articleContainer">
                         <div class="articleImg">
-                            <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                            <img src="https://clickbirotica.ro/10756/apa-minerala-plata-2-litri-6-bucbax-borsec.jpg"
                                 alt="imgPost" />
                         </div>
                         <div class="articleTitle">
@@ -236,12 +233,12 @@ oci_close($conn);
                                     </a>
                                 </div>
                                 <div class="categoriesContainer">
-                                    <a href="carne.php">
+                                    <a href="lactate.php">
                                         <span class="icon">
                                             <i class="fas fa-angle-right"></i>
                                         </span>
                                         <span class="nameCategories">
-                                            Carne
+                                            Lactate
                                         </span>
                                         <span class="numberOfPostsForCategories">
                                             10
