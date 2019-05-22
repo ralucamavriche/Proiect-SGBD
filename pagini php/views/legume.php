@@ -6,20 +6,15 @@ if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message']), E_USER_ERROR);
 }
-
 $stid = oci_parse($conn, 'begin :r := afisare_tip_articole(:v_id,:v_comanda); end;');
 oci_bind_by_name($stid, ':v_id', $v_id);
 oci_bind_by_name($stid, ':v_comanda', $v_comanda);
-
 oci_bind_by_name($stid, ':r', $r, 40);
 oci_execute($stid);
-
 print "$r";
-
 oci_free_statement($stid);
 oci_close($conn);
 }
-getCategorie(354,'TIP_ARTICOL');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +37,7 @@ getCategorie(354,'TIP_ARTICOL');
         <nav>
             <ul class="main">
                 <li>
-                    <a   href="index.php"><i class="fas fa-home"></i> Acasa</a>
+                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
                 </li>
                 <li>
                 <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
@@ -81,12 +76,15 @@ getCategorie(354,'TIP_ARTICOL');
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            Fructe
+                           <?php getCategorie(21223344,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                        18 Lei
+                            <?php getCategorie(21223344,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getCategorie(21223344,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -107,12 +105,16 @@ getCategorie(354,'TIP_ARTICOL');
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            Fructe
+                        <?php getCategorie(21223345,'NUME_PRODUS'); ?>
+
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                        18 Lei
+                            <?php getCategorie(21223345,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getCategorie(21223345,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -133,12 +135,16 @@ getCategorie(354,'TIP_ARTICOL');
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            Fructe
+                        <?php getCategorie(21223346,'NUME_PRODUS'); ?>
+
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                        18 Lei
+                            <?php getCategorie(21223346,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getCategorie(21223346,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -163,8 +169,11 @@ getCategorie(354,'TIP_ARTICOL');
                         </div>
                         <div class="pret">
                                 <h1>Subtotal:</h1>
-                            18 Lei
+                                <?php getCategorie(21223347,'PRET'); ?> Lei
                         </div>
+                        <div class="cantitate">
+                        <h2>Cantitate:  <?php getCategorie(21223347,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
                         <div class="buyButton">
                             <button class="btn normal" type="button">
                                 Cumpara
@@ -184,7 +193,20 @@ getCategorie(354,'TIP_ARTICOL');
                             </div>
                             <div class="categoriesBody">
                                 <div class="categoriesContainer">
-                                    <a href="#">
+                                    <a href="produse.php">
+                                        <span class="icon">
+                                            <i class="fas fa-angle-right"></i>
+                                        </span>
+                                        <span class="nameCategories">
+                                            All
+                                        </span>
+                                        <span class="numberOfPostsForCategories">
+                                            10
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="categoriesContainer">
+                                    <a href="legume.php">
                                         <span class="icon">
                                             <i class="fas fa-angle-right"></i>
                                         </span>
@@ -197,7 +219,7 @@ getCategorie(354,'TIP_ARTICOL');
                                     </a>
                                 </div>
                                 <div class="categoriesContainer">
-                                    <a href="#">
+                                    <a href="fructe.php">
                                         <span class="icon">
                                             <i class="fas fa-angle-right"></i>
                                         </span>
@@ -210,7 +232,7 @@ getCategorie(354,'TIP_ARTICOL');
                                     </a>
                                 </div>
                                 <div class="categoriesContainer">
-                                    <a href="#">
+                                    <a href="carne.php">
                                         <span class="icon">
                                             <i class="fas fa-angle-right"></i>
                                         </span>
@@ -223,7 +245,7 @@ getCategorie(354,'TIP_ARTICOL');
                                     </a>
                                 </div>
                                 <div class="categoriesContainer">
-                                    <a href="#">
+                                    <a href="dulciuri.php">
                                         <span class="icon">
                                             <i class="fas fa-angle-right"></i>
                                         </span>
@@ -236,7 +258,7 @@ getCategorie(354,'TIP_ARTICOL');
                                     </a>
                                 </div>
                                 <div class="categoriesContainer">
-                                    <a href="#">
+                                    <a href="bauturi.php">
                                         <span class="icon">
                                             <i class="fas fa-angle-right"></i>
                                         </span>
