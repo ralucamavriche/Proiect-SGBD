@@ -37,7 +37,7 @@
                     <a href="furnizori.php"><i class="fas fa-angle-right"></i>Furnizori</a>
                 </li>
                 <li>
-                    <a href="login.php"><i class="fas fa-angle-right"></i>Login</a>
+                    <a href="logout.php"><i class="fas fa-angle-right"></i>Logout</a>
                 </li>
 
             </ul>

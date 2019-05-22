@@ -345,7 +345,7 @@ ul.main li a.active {
   padding: 20px;
 }
 .categoriesContainer a:hover {
-  color: gray;
+  color: rgb(218, 96, 96);
 }
 
 .pageRecentPosts {

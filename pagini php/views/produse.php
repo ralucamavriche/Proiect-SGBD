@@ -49,7 +49,7 @@ function getDataForProdus($id,$name)
                     <a href="furnizori.php"><i class="fas fa-angle-right"></i>Furnizori</a>
                 </li>
                 <li>
-                    <a href="login.php"><i class="fas fa-angle-right"></i>Login</a>
+                    <a href="logout.php"><i class="fas fa-angle-right"></i>Logout</a>
                 </li>
             </ul>
         </nav>
@@ -65,20 +65,19 @@ function getDataForProdus($id,$name)
             <div class="articles">
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
-                            alt="imgPost" />
+                        <img src="https://globalromania.ro/wp-content/uploads/2018/07/a7fa94da540af02479026939dae3a616.jpeg"                            alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            <?php getDataForProdus(1,'NUME_PRODUS'); ?>
+                            <?php getDataForProdus(18,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                         <h1>Subtotal:</h1>
-                        <?php getDataForProdus(1,'PRET'); ?> Lei
+                        <?php getDataForProdus(18,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getDataForProdus(1,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getDataForProdus(18,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -94,21 +93,21 @@ function getDataForProdus($id,$name)
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.minuneanaturii.ro/17202-home_default/otet-de-mere-si-miere-1l-nera-plant-.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            <?php getDataForProdus(2,'NUME_PRODUS');
+                            <?php getDataForProdus(12,'NUME_PRODUS');
                         ?>
                         </h2>
                     </div>
                     <div class="pret">
                         <h1>Subtotal:</h1>
-                        <?php getDataForProdus(2,'PRET'); ?> Lei
+                        <?php getDataForProdus(12,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getDataForProdus(2,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getDataForProdus(12,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -124,20 +123,20 @@ function getDataForProdus($id,$name)
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.raraul.ro/images/products/Unt-De-Masa-Tip-B-200g-367.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            <?php getDataForProdus(3,'NUME_PRODUS'); ?>
+                            <?php getDataForProdus(13,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                         <h1>Subtotal:</h1>
-                        <?php getDataForProdus(3,'PRET'); ?> Lei
+                        <?php getDataForProdus(13,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getDataForProdus(3,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getDataForProdus(13,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -153,20 +152,20 @@ function getDataForProdus($id,$name)
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://comenzi.farmaciatei.ro/images/products/comenzi.farmaciatei.ro/biscuiti-cu-ciocolata-si-zmeura-gerble-140-g-nutrition-sante-10054211.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            <?php getDataForProdus(4,'NUME_PRODUS'); ?>
+                            <?php getDataForProdus(15,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                         <h1>Subtotal:</h1>
-                        <?php getDataForProdus(4,'PRET'); ?> Lei
+                        <?php getDataForProdus(15,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getDataForProdus(4,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getDataForProdus(15,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -188,7 +187,20 @@ function getDataForProdus($id,$name)
                     </div>
                     <div class="categoriesBody">
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="produse.php">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    All
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    80
+                                </span>
+                            </a>
+                        </div>
+                        <div class="categoriesContainer">
+                            <a href="legume.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>

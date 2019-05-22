@@ -1,3 +1,27 @@
+<?php
+function getReducere($v_id,$v_comanda)
+{
+$conn=oci_connect("PROIECT","PROIECT","localhost/XE");
+if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message']), E_USER_ERROR);
+}
+// $v_id=1;
+// $v_comanda='NUME_PRODUS';
+
+$stid = oci_parse($conn, 'begin :r := afisare_produse_reduse(:v_id,:v_comanda); end;');
+oci_bind_by_name($stid, ':v_id', $v_id);
+oci_bind_by_name($stid, ':v_comanda', $v_comanda);
+
+oci_bind_by_name($stid, ':r', $r, 40);
+oci_execute($stid);
+
+print "$r";
+
+oci_free_statement($stid);
+oci_close($conn);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +61,7 @@
                     <a href="furnizori.php"><i class="fas fa-angle-right"></i>Furnizori</a>
                 </li>
                 <li>
-                    <a href="login.php"><i class="fas fa-angle-right"></i>Login</a>
+                    <a href="logout.php"><i class="fas fa-angle-right"></i>Logout</a>
                 </li>
             </ul>
         </nav>
@@ -53,23 +77,24 @@
             <div class="articles">
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="http://www.e-bath.ro/poze/mari/975.jpg?"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            Fructe
+                           <?php
+                            getReducere(1,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                         <h1>Subtotal:</h1>
                         <div class="pret_final">
-                            18 Lei/12 Lei
+                        <?php getReducere(1,'PRET'); ?> Lei/ <?php getReducere(1,'PRET_REDUS'); ?> Lei
                         </div>
 
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate: 22 buc </h2>
+                        <h2>Cantitate: <?php getReducere(1,'NUMAR_BUCATI'); ?> buc </h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -85,22 +110,22 @@
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://comenzi.bebetei.ro/filemanager/loadImage/paine-crocanta-bogata-in-fibre-170-g-sonko-10085953"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            Fructe
+                        <?php getReducere(2,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                         <h1>Subtotal:</h1>
                         <div class="pret_final">
-                            18 Lei/12 Lei
+                        <?php getReducere(2,'PRET'); ?> Lei/ <?php getReducere(2,'PRET_REDUS'); ?> Lei
                         </div>
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate: 22 buc </h2>
+                    <h2>Cantitate: <?php getReducere(2,'NUMAR_BUCATI'); ?> buc </h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -116,22 +141,22 @@
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://ro.all.biz/img/ro/catalog/51615.jpeg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            Fructe
+                        <?php getReducere(3,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                         <h1>Subtotal:</h1>
                         <div class="pret_final">
-                            18 Lei/12 Lei
+                        <?php getReducere(3,'PRET'); ?> Lei/ <?php getReducere(3,'PRET_REDUS'); ?> Lei
                         </div>
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate: 22 buc </h2>
+                    <h2>Cantitate: <?php getReducere(3,'NUMAR_BUCATI'); ?> buc </h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -146,22 +171,22 @@
                 </div>
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.maminet.ro/img/cache/BND008_400.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                            Fructe
+                        <?php getReducere(4,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                         <h1>Subtotal:</h1>
                         <div class="pret_final">
-                            18 Lei/12 Lei
+                        <?php getReducere(4,'PRET'); ?> Lei/ <?php getReducere(4,'PRET_REDUS'); ?> Lei
                         </div>
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate: 22 buc </h2>
+                    <h2>Cantitate: <?php getReducere(4,'NUMAR_BUCATI'); ?> buc </h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -182,7 +207,7 @@
                     </div>
                     <div class="categoriesBody">
                         <div class="categoriesContainer">
-                            <a href="#">
+                            <a href="legume.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
@@ -327,16 +352,3 @@
 </body>
 
 </html>
-<?php
-function getDataForProdus($id,$name)
-{
-    $conn=oci_connect("STUDENT","STUDENT","localhost/XE");
-    $result = oci_parse($conn, "SELECT * FROM produse where id like '".$id."'");
-    oci_execute($result);
-    while($row = oci_fetch_array($result))
-    {
-        echo $row [$name];
-    }
-}
-getDataForProdus(1,'ID');
-?>

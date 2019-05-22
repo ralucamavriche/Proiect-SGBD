@@ -55,23 +55,10 @@ if( $numberofrows == 1 ){
       <nav>
         <ul class="main">
             <li>
-                <a  href="index.php"><i class="fas fa-home"></i> Acasa</a>
-            </li>
-
-            <li>
-                <a  href="produse.php"><i class="fas fa-angle-right"></i>Produse</a>
+                <a href="login.php"><i class="fas fa-angle-right"></i>Login</a>
             </li>
             <li>
-                <a href="reduceri.php"><i class="fas fa-angle-right"></i>Reduceri</a>
-            </li>
-            <li>
-                <a href="clienti.php"><i class="fas fa-users"></i>Clienti</a>
-            </li>
-            <li>
-                <a href="furnizori.php"><i class="fas fa-angle-right"></i>Furnizori</a>
-            </li>
-            <li>
-                <a class="active" href="login.php"><i class="fas fa-angle-right"></i>Login</a>
+                <a class="active" href="register.php"><i class="fas fa-angle-right"></i>Register</a>
             </li>
 
         </ul>
