@@ -31,9 +31,6 @@ function getDataForProdus($id,$name)
         <nav>
             <ul class="main">
                 <li>
-                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
-                </li>
-                <li>
                     <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
                 <li>
@@ -394,12 +391,12 @@ function getDataForProdus($id,$name)
                             </a>
                         </div>
                         <div class="categoriesContainer">
-                            <a href="carne.php">
+                            <a href="lactate.php">
                                 <span class="icon">
                                     <i class="fas fa-angle-right"></i>
                                 </span>
                                 <span class="nameCategories">
-                                    Carne
+                                    Lactate
                                 </span>
                                 <span class="numberOfPostsForCategories">
                                     10

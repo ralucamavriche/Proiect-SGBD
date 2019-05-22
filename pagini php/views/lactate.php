@@ -41,9 +41,6 @@ oci_close($conn);
         <nav>
             <ul class="main">
                 <li>
-                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
-                </li>
-                <li>
                 <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
                 <li>
@@ -75,20 +72,20 @@ oci_close($conn);
             <div class="articles">
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.covalact.ro/thumbs/600/2017/10/19/lapte-prins-5621.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                           <?php getCategorie(1,'NUME_PRODUS'); ?>
+                           <?php getCategorie(212233445,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(212233445,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(212233445,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -104,21 +101,21 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://covalact.ro/thumbs/400-400-1/2015/11/19/crema-de-branza-proaspata-5111.png"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getCategorie(1,'NUME_PRODUS'); ?>
+                        <?php getCategorie(212233455,'NUME_PRODUS'); ?>
 
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(212233455,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(212233455,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -134,21 +131,21 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://covalact.ro/thumbs/400-400-1/2016/12/12/smantana-covalact-de-tara-5454.png"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getCategorie(1,'NUME_PRODUS'); ?>
+                        <?php getCategorie(212233465,'NUME_PRODUS'); ?>
 
                         </h2>
                     </div>
                     <div class="pret">
                             <h1>Subtotal:</h1>
-                            <?php getCategorie(1,'PRET'); ?> Lei
+                            <?php getCategorie(212233465,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(212233465,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -163,20 +160,20 @@ oci_close($conn);
                     </div>
                     <div class="articleContainer">
                         <div class="articleImg">
-                            <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                            <img src="https://covalact.ro/thumbs/400-400-1/2016/11/28/cascaval-covalact-de-tara-5379.jpg"
                                 alt="imgPost" />
                         </div>
                         <div class="articleTitle">
                             <h2>
-                                Fructe
+                            <?php getCategorie(212233475,'NUME_PRODUS'); ?>
                             </h2>
                         </div>
                         <div class="pret">
                                 <h1>Subtotal:</h1>
-                                <?php getCategorie(1,'PRET'); ?> Lei
+                                <?php getCategorie(212233475,'PRET'); ?> Lei
                         </div>
                         <div class="cantitate">
-                        <h2>Cantitate:  <?php getCategorie(13,'NUMAR_BUCATI'); ?> buc</h2>
+                        <h2>Cantitate:  <?php getCategorie(212233475,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                         <div class="buyButton">
                             <button class="btn normal" type="button">
@@ -236,12 +233,12 @@ oci_close($conn);
                                     </a>
                                 </div>
                                 <div class="categoriesContainer">
-                                    <a href="carne.php">
+                                    <a href="lactate.php">
                                         <span class="icon">
                                             <i class="fas fa-angle-right"></i>
                                         </span>
                                         <span class="nameCategories">
-                                            Carne
+                                            Lactate
                                         </span>
                                         <span class="numberOfPostsForCategories">
                                             10
@@ -277,64 +274,6 @@ oci_close($conn);
                             </div>
                         </div>
                     </div>
-
-                    <!-- <div class="pageRecentPosts">
-          <div class="recentPosts">
-            <div class="recentTitlePosts">
-              <span>Postari Recente</span>
-            </div>
-            <div class="recentBody">
-              <a href="#">
-                <div class="recentContainer">
-                  <div class="recentImg">
-                    <img
-                      src="https://www.joslin.org/images/hp-news-icon.png"
-                      alt="recentPost"
-                    />
-                  </div>
-                  <div class="recentDescription">
-                    The best title ever Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Aliquid blanditiis natus, atque
-                    repellendus voluptates molestias quaerat ducimus fuga nisi,
-                    excepturi eum...
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="recentContainer">
-                  <div class="recentImg">
-                    <img
-                      src="https://www.joslin.org/images/hp-news-icon.png"
-                      alt="recentPost"
-                    />
-                  </div>
-                  <div class="recentDescription">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptates, adipisci atque nihil sint iste aperiam
-                    distinctio est minima architecto tempore quae at cumque a
-                    quasi illo accusamus necessitatibus minus quia?
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="recentContainer">
-                  <div class="recentImg">
-                    <img
-                      src="https://www.joslin.org/images/hp-news-icon.png"
-                      alt="recentPost"
-                    />
-                  </div>
-                  <div class="recentDescription">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Temporibus laboriosam nostrum dignissimos, minus quasi
-                    impedit asperiores in facere incidunt delectus non sed ut
-                    autem ab quas nemo neque earum ea!
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div> -->
         </section>
     </article>
     <aside></aside>

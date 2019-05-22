@@ -41,9 +41,6 @@ oci_close($conn);
         <nav>
             <ul class="main">
                 <li>
-                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
-                </li>
-                <li>
                 <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
                 <li>
@@ -75,7 +72,7 @@ oci_close($conn);
             <div class="articles">
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.marketgradimex.ro/wp-content/uploads/2018/10/2_mere_golden_cal1-400x400.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -104,7 +101,7 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="http://en.mazzonigroup.com/wp-content/uploads/sites/122/2016/12/pere-purea.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -134,7 +131,7 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                        <img src="https://www.culinar.ro/assets/files/thumb/400x400x2/articles/fdb_1458212268_spanac.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
@@ -163,7 +160,7 @@ oci_close($conn);
                     </div>
                     <div class="articleContainer">
                         <div class="articleImg">
-                            <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                            <img src="https://www.marketgradimex.ro/wp-content/uploads/2018/09/2_banane_cal1.jpg"
                                 alt="imgPost" />
                         </div>
                         <div class="articleTitle">
@@ -237,12 +234,12 @@ oci_close($conn);
                                     </a>
                                 </div>
                                 <div class="categoriesContainer">
-                                    <a href="carne.php">
+                                    <a href="lactate.php">
                                         <span class="icon">
                                             <i class="fas fa-angle-right"></i>
                                         </span>
                                         <span class="nameCategories">
-                                            Carne
+                                            Lactate
                                         </span>
                                         <span class="numberOfPostsForCategories">
                                             10

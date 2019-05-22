@@ -48,7 +48,7 @@ if( $numberofrows == 1 ){
       rel="stylesheet"
     />
 
-    <title>Document</title>
+    <title>Supermarket</title>
   </head>
   <body>
     <header>

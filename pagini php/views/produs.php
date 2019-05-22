@@ -20,9 +20,6 @@
         <nav>
             <ul class="main">
                 <li>
-                    <a href="index.php"><i class="fas fa-home"></i> Acasa</a>
-                </li>
-                <li>
                 <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
 
