@@ -719,3 +719,26 @@ box-shadow:0 0 0 1px rgb(1, 90, 1);
   padding: 0 0 20px 0;
   font-size: 20px;
 }
+/* Comanda.php */
+.background{
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+}
+.infoComanda{
+  width: 100%;
+  text-align: center;
+}
+.idComanda input{
+  margin: 20px;
+}
+
+.infoComanda p{
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+.btn_idComanda{
+  text-align: center;
+}
