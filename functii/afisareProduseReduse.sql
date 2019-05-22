@@ -1,32 +1,49 @@
 CREATE OR REPLACE procedure afisare_produse_reduse
+(v_id IN INT, v_comanda IN VARCHAR2)
 AS 
     v_nume varchar2(60);
-    cursor c_id_reducere is SELECT id_reducere FROM produse where id_reducere is not null;
+    cursor c_id_reducere is SELECT id_reducere FROM produse where id_reducere is not null and id=v_id;
    vv_id int;
-    v_procent_reducere int;
-    v_id int;
     v_id_red int;
     v_procent int;
     v_pret int;
-    
+    v_id_produse int;
+    v_id_articol int;
+    v_numar_bucati int;
     v_pret_redus int;
 
 BEGIN
    open c_id_reducere;
-LOOP
    fetch c_id_reducere into vv_id;
-   exit when c_id_reducere%NOTFOUND;
 
-    select id,nume_produs,pret into v_id,v_nume,v_pret from produse where id=vv_id;
+    select id, id_articol, nume_produs,pret, numar_bucati into v_id_produse, v_id_articol, v_nume,v_pret, v_numar_bucati from produse where id=v_id;
     select id,procent_reducere into v_id_red,v_procent from reduceri where id=vv_id;
     v_pret_redus := v_pret- (v_procent/100)*v_pret;
-    dbms_output.put_line('Produsul ' || v_nume || ' cu id-ul ' || v_id || ' a ajuns de la suma de ' 
-    || v_pret || 'lei la suma de ' || v_pret_redus || 'lei dupa aplicarea reducerii de ' ||  v_procent || '%');
-END LOOP;
+    
+IF upper(v_comanda)='NUME_PRODUS' then
+        dbms_output.put_line( v_nume);
+    end if;
+IF upper(v_comanda)='ID_ARTICOL' THEN
+        dbms_output.put_line( v_id_articol);
+        end if;
+IF upper(v_comanda)='ID_REDUCERE' THEN
+        dbms_output.put_line(v_id_red);
+        end if;
+IF upper(v_comanda)='PRET' THEN
+        dbms_output.put_line(v_pret);
+        end if;
+IF upper(v_comanda)='NUMAR_BUCATI' THEN
+        dbms_output.put_line(v_numar_bucati);
+        end if;
+IF upper(v_comanda)='PRET_REDUS' THEN
+        dbms_output.put_line(v_pret_redus);
+        end if;
+        
 close c_id_reducere;
 END;
 
 set serveroutput on;
 begin
-    afisare_produse_reduse();
+    afisare_produse_reduse(3619,'PRET_REDUS');
 end;
+
