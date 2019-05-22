@@ -10,6 +10,29 @@ function getDataForProdus($id,$name)
     }
 }
 ?>
+<?php
+
+function getTipProdus($v_comanda)
+{
+$conn=oci_connect("PROIECT","PROIECT","localhost/XE");
+if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message']), E_USER_ERROR);
+}
+
+$stid = oci_parse($conn, 'begin :r := contorizare_tip_produs(:v_comanda); end;');
+oci_bind_by_name($stid, ':v_comanda', $v_comanda);
+
+oci_bind_by_name($stid, ':r', $r, 40);
+oci_execute($stid);
+
+print "$r";
+
+oci_free_statement($stid);
+oci_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -360,7 +383,7 @@ function getDataForProdus($id,$name)
                                     All
                                 </span>
                                 <span class="numberOfPostsForCategories">
-                                    80
+                                    1232
                                 </span>
                             </a>
                         </div>
@@ -373,7 +396,7 @@ function getDataForProdus($id,$name)
                                     Legume
                                 </span>
                                 <span class="numberOfPostsForCategories">
-                                    10
+                                    <?php getTipProdus('LEGUME'); ?>
                                 </span>
                             </a>
                         </div>
@@ -386,7 +409,7 @@ function getDataForProdus($id,$name)
                                     Fructe
                                 </span>
                                 <span class="numberOfPostsForCategories">
-                                    10
+                                <?php getTipProdus('FRUCTE'); ?>
                                 </span>
                             </a>
                         </div>
@@ -399,7 +422,7 @@ function getDataForProdus($id,$name)
                                     Lactate
                                 </span>
                                 <span class="numberOfPostsForCategories">
-                                    10
+                                <?php getTipProdus('LACTATE'); ?>
                                 </span>
                             </a>
                         </div>
@@ -412,7 +435,7 @@ function getDataForProdus($id,$name)
                                     Dulciuri
                                 </span>
                                 <span class="numberOfPostsForCategories">
-                                    10
+                                <?php getTipProdus('DULCIURI'); ?>
                                 </span>
                             </a>
                         </div>
@@ -425,7 +448,7 @@ function getDataForProdus($id,$name)
                                     Bauturi
                                 </span>
                                 <span class="numberOfPostsForCategories">
-                                    10
+                                <?php getTipProdus('BAUTURI'); ?>
                                 </span>
                             </a>
                         </div>

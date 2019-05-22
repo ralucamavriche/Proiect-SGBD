@@ -65,7 +65,7 @@ if( $numberofrows == 1 ){
       </nav>
       <article>
         <div class="main-title">
-          <span>Formular de inregistrare</span>
+        <h1>Register</h1>
         </div>
       </article>
     </header>

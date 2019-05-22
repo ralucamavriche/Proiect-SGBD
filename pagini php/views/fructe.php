@@ -20,6 +20,29 @@ oci_free_statement($stid);
 oci_close($conn);
 }
 ?>
+
+<?php
+
+function getTipProdus($v_comanda)
+{
+$conn=oci_connect("PROIECT","PROIECT","localhost/XE");
+if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message']), E_USER_ERROR);
+}
+
+$stid = oci_parse($conn, 'begin :r := contorizare_tip_produs(:v_comanda); end;');
+oci_bind_by_name($stid, ':v_comanda', $v_comanda);
+
+oci_bind_by_name($stid, ':r', $r, 40);
+oci_execute($stid);
+
+print "$r";
+
+oci_free_statement($stid);
+oci_close($conn);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -189,92 +212,92 @@ oci_close($conn);
                         </div>
                     </div>
                     <div class="pageOptions">
-                        <div class="categories">
-                            <div class="categoriesTitle">
-                                <span>Categorii</span>
-                            </div>
-                            <div class="categoriesBody">
-                                <div class="categoriesContainer">
-                                    <a href="produse.php">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            All
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="legume.php">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Legume
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="fructe.php">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Fructe
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="lactate.php">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Lactate
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="dulciuri.php">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Dulciuri
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="categoriesContainer">
-                                    <a href="bauturi.php">
-                                        <span class="icon">
-                                            <i class="fas fa-angle-right"></i>
-                                        </span>
-                                        <span class="nameCategories">
-                                            Bauturi
-                                        </span>
-                                        <span class="numberOfPostsForCategories">
-                                            10
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
+                <div class="categories">
+                    <div class="categoriesTitle">
+                        <span>Categorii</span>
+                    </div>
+                    <div class="categoriesBody">
+                        <div class="categoriesContainer">
+                            <a href="produse.php">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    All
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    1232
+                                </span>
+                            </a>
+                        </div>
+                        <div class="categoriesContainer">
+                            <a href="legume.php">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Legume
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                    <?php getTipProdus('LEGUME'); ?>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="categoriesContainer">
+                            <a href="fructe.php">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Fructe
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                <?php getTipProdus('FRUCTE'); ?>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="categoriesContainer">
+                            <a href="lactate.php">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Lactate
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                <?php getTipProdus('LACTATE'); ?>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="categoriesContainer">
+                            <a href="dulciuri.php">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Dulciuri
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                <?php getTipProdus('DULCIURI'); ?>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="categoriesContainer">
+                            <a href="bauturi.php">
+                                <span class="icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="nameCategories">
+                                    Bauturi
+                                </span>
+                                <span class="numberOfPostsForCategories">
+                                <?php getTipProdus('BAUTURI'); ?>
+                                </span>
+                            </a>
                         </div>
                     </div>
+                </div>
+            </div>
 
                     <!-- <div class="pageRecentPosts">
           <div class="recentPosts">
