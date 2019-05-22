@@ -1,7 +1,6 @@
 <?php
 ob_start();
 $conn=oci_connect("PROIECT","PROIECT","localhost/XE");
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 $email = $_POST['email'];

@@ -315,3 +315,16 @@
 </body>
 
 </html>
+<?php
+function getDataForProdus($id,$name)
+{
+    $conn=oci_connect("STUDENT","STUDENT","localhost/XE");
+    $result = oci_parse($conn, "SELECT * FROM produse where id like '".$id."'");
+    oci_execute($result);
+    while($row = oci_fetch_array($result))
+    {
+        echo $row [$name];
+    }
+}
+getDataForProdus(1,'ID');
+?>
