@@ -1,15 +1,13 @@
 <?php
-function getReducere($v_id,$v_comanda)
+function getCategorie($v_id,$v_comanda)
 {
 $conn=oci_connect("PROIECT","PROIECT","localhost/XE");
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message']), E_USER_ERROR);
 }
-// $v_id=1;
-// $v_comanda='NUME_PRODUS';
 
-$stid = oci_parse($conn, 'begin :r := afisare_produse_reduse(:v_id,:v_comanda); end;');
+$stid = oci_parse($conn, 'begin :r := afisare_tip_articole(:v_id,:v_comanda); end;');
 oci_bind_by_name($stid, ':v_id', $v_id);
 oci_bind_by_name($stid, ':v_comanda', $v_comanda);
 
@@ -49,10 +47,10 @@ oci_close($conn);
                 <a href="contact.php"><i class="fas fa-angle-right"></i> Contacte </a>
                 </li>
                 <li>
-                    <a href="produse.php"><i class="fas fa-angle-right"></i>Produse</a>
+                    <a class="active" href="produse.php"><i class="fas fa-angle-right"></i>Produse</a>
                 </li>
                 <li>
-                    <a class="active" href="reduceri.php"><i class="fas fa-angle-right"></i>Reduceri</a>
+                    <a href="reduceri.php"><i class="fas fa-angle-right"></i>Reduceri</a>
                 </li>
                 <li>
                     <a href="clienti.php"><i class="fas fa-users"></i>Clienti</a>
@@ -77,24 +75,20 @@ oci_close($conn);
             <div class="articles">
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="http://www.e-bath.ro/poze/mari/975.jpg?"
+                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                           <?php
-                            getReducere(1,'NUME_PRODUS'); ?>
+                           <?php getCategorie(1122334755,'NUME_PRODUS'); ?>
                         </h2>
                     </div>
                     <div class="pret">
-                        <h1>Subtotal:</h1>
-                        <div class="pret_final">
-                        <?php getReducere(1,'PRET'); ?> Lei/ <?php getReducere(1,'PRET_REDUS'); ?> Lei
-                        </div>
-
+                            <h1>Subtotal:</h1>
+                            <?php getCategorie(1122334755,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                        <h2>Cantitate: <?php getReducere(1,'NUMAR_BUCATI'); ?> buc </h2>
+                        <h2>Cantitate:  <?php getCategorie(1122334755,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -110,22 +104,21 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://comenzi.bebetei.ro/filemanager/loadImage/paine-crocanta-bogata-in-fibre-170-g-sonko-10085953"
+                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getReducere(2,'NUME_PRODUS'); ?>
+                        <?php getCategorie(1122334455,'NUME_PRODUS'); ?>
+
                         </h2>
                     </div>
                     <div class="pret">
-                        <h1>Subtotal:</h1>
-                        <div class="pret_final">
-                        <?php getReducere(2,'PRET'); ?> Lei/ <?php getReducere(2,'PRET_REDUS'); ?> Lei
-                        </div>
+                            <h1>Subtotal:</h1>
+                            <?php getCategorie(1122334455,'PRET'); ?> Lei
                     </div>
                     <div class="cantitate">
-                    <h2>Cantitate: <?php getReducere(2,'NUMAR_BUCATI'); ?> buc </h2>
+                        <h2>Cantitate:  <?php getCategorie(1122334455,'NUMAR_BUCATI'); ?> buc</h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -141,154 +134,151 @@ oci_close($conn);
 
                 <div class="articleContainer">
                     <div class="articleImg">
-                        <img src="https://ro.all.biz/img/ro/catalog/51615.jpeg"
+                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
                             alt="imgPost" />
                     </div>
                     <div class="articleTitle">
                         <h2>
-                        <?php getReducere(3,'NUME_PRODUS'); ?>
-                        </h2>
-                    </div>
-                    <div class="pret">
-                        <h1>Subtotal:</h1>
-                        <div class="pret_final">
-                        <?php getReducere(3,'PRET'); ?> Lei/ <?php getReducere(3,'PRET_REDUS'); ?> Lei
-                        </div>
-                    </div>
-                    <div class="cantitate">
-                    <h2>Cantitate: <?php getReducere(3,'NUMAR_BUCATI'); ?> buc </h2>
-                    </div>
-                    <div class="buyButton">
-                        <button class="btn normal" type="button">
-                            Cumpara
-                        </button>
-                    </div>
-                    <div class="articleButton">
-                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
-                            Vezi mai multe
-                        </button>
-                    </div>
-                </div>
-                <div class="articleContainer">
-                    <div class="articleImg">
-                        <img src="https://www.maminet.ro/img/cache/BND008_400.jpg"
-                            alt="imgPost" />
-                    </div>
-                    <div class="articleTitle">
-                        <h2>
-                        <?php getReducere(4,'NUME_PRODUS'); ?>
-                        </h2>
-                    </div>
-                    <div class="pret">
-                        <h1>Subtotal:</h1>
-                        <div class="pret_final">
-                        <?php getReducere(4,'PRET'); ?> Lei/ <?php getReducere(4,'PRET_REDUS'); ?> Lei
-                        </div>
-                    </div>
-                    <div class="cantitate">
-                    <h2>Cantitate: <?php getReducere(4,'NUMAR_BUCATI'); ?> buc </h2>
-                    </div>
-                    <div class="buyButton">
-                        <button class="btn normal" type="button">
-                            Cumpara
-                        </button>
-                    </div>
-                    <div class="articleButton">
-                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
-                            Vezi mai multe
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="pageOptions">
-                <div class="categories">
-                    <div class="categoriesTitle">
-                        <span>Categorii</span>
-                    </div>
-                    <div class="categoriesBody">
-                        <div class="categoriesContainer">
-                            <a href="produse.php">
-                                <span class="icon">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                                <span class="nameCategories">
-                                    All
-                                </span>
-                                <span class="numberOfPostsForCategories">
-                                    10
-                                </span>
-                            </a>
-                        </div>
-                        <div class="categoriesContainer">
-                            <a href="legume.php">
-                                <span class="icon">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                                <span class="nameCategories">
-                                    Legume
-                                </span>
-                                <span class="numberOfPostsForCategories">
-                                    10
-                                </span>
-                            </a>
-                        </div>
-                        <div class="categoriesContainer">
-                            <a href="fructe.php">
-                                <span class="icon">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                                <span class="nameCategories">
-                                    Fructe
-                                </span>
-                                <span class="numberOfPostsForCategories">
-                                    10
-                                </span>
-                            </a>
-                        </div>
-                        <div class="categoriesContainer">
-                            <a href="carne.php">
-                                <span class="icon">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                                <span class="nameCategories">
-                                    Carne
-                                </span>
-                                <span class="numberOfPostsForCategories">
-                                    10
-                                </span>
-                            </a>
-                        </div>
-                        <div class="categoriesContainer">
-                            <a href="dulciuri.php">
-                                <span class="icon">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                                <span class="nameCategories">
-                                    Dulciuri
-                                </span>
-                                <span class="numberOfPostsForCategories">
-                                    10
-                                </span>
-                            </a>
-                        </div>
-                        <div class="categoriesContainer">
-                            <a href="bauturi.php">
-                                <span class="icon">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                                <span class="nameCategories">
-                                    Bauturi
-                                </span>
-                                <span class="numberOfPostsForCategories">
-                                    10
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <?php getCategorie(1122334555,'NUME_PRODUS'); ?>
 
-            <!-- <div class="pageRecentPosts">
+                        </h2>
+                    </div>
+                    <div class="pret">
+                            <h1>Subtotal:</h1>
+                            <?php getCategorie(1122334555,'PRET'); ?> Lei
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate:  <?php getCategorie(1122334555,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                        <div class="articleButton">
+                            <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                                Vezi mai multe
+                            </button>
+                        </div>
+                    </div>
+                    <div class="articleContainer">
+                        <div class="articleImg">
+                            <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                                alt="imgPost" />
+                        </div>
+                        <div class="articleTitle">
+                            <h2>
+                            <?php getCategorie(1122334655,'NUME_PRODUS'); ?> 
+                            </h2>
+                        </div>
+                        <div class="pret">
+                                <h1>Subtotal:</h1>
+                                <?php getCategorie(1122334655,'PRET'); ?> Lei
+                        </div>
+                        <div class="cantitate">
+                        <h2>Cantitate:  <?php getCategorie(1122334655,'NUMAR_BUCATI'); ?> buc</h2>
+                    </div>
+                        <div class="buyButton">
+                            <button class="btn normal" type="button">
+                                Cumpara
+                            </button>
+                        </div>
+                            <div class="articleButton">
+                                <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                                    Vezi mai multe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pageOptions">
+                        <div class="categories">
+                            <div class="categoriesTitle">
+                                <span>Categorii</span>
+                            </div>
+                            <div class="categoriesBody">
+                                <div class="categoriesContainer">
+                                    <a href="produse.php">
+                                        <span class="icon">
+                                            <i class="fas fa-angle-right"></i>
+                                        </span>
+                                        <span class="nameCategories">
+                                            All
+                                        </span>
+                                        <span class="numberOfPostsForCategories">
+                                            10
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="categoriesContainer">
+                                    <a href="legume.php">
+                                        <span class="icon">
+                                            <i class="fas fa-angle-right"></i>
+                                        </span>
+                                        <span class="nameCategories">
+                                            Legume
+                                        </span>
+                                        <span class="numberOfPostsForCategories">
+                                            10
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="categoriesContainer">
+                                    <a href="fructe.php">
+                                        <span class="icon">
+                                            <i class="fas fa-angle-right"></i>
+                                        </span>
+                                        <span class="nameCategories">
+                                            Fructe
+                                        </span>
+                                        <span class="numberOfPostsForCategories">
+                                            10
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="categoriesContainer">
+                                    <a href="carne.php">
+                                        <span class="icon">
+                                            <i class="fas fa-angle-right"></i>
+                                        </span>
+                                        <span class="nameCategories">
+                                            Carne
+                                        </span>
+                                        <span class="numberOfPostsForCategories">
+                                            10
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="categoriesContainer">
+                                    <a href="dulciuri.php">
+                                        <span class="icon">
+                                            <i class="fas fa-angle-right"></i>
+                                        </span>
+                                        <span class="nameCategories">
+                                            Dulciuri
+                                        </span>
+                                        <span class="numberOfPostsForCategories">
+                                            10
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="categoriesContainer">
+                                    <a href="bauturi.php">
+                                        <span class="icon">
+                                            <i class="fas fa-angle-right"></i>
+                                        </span>
+                                        <span class="nameCategories">
+                                            Bauturi
+                                        </span>
+                                        <span class="numberOfPostsForCategories">
+                                            10
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="pageRecentPosts">
           <div class="recentPosts">
             <div class="recentTitlePosts">
               <span>Postari Recente</span>
