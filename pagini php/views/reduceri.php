@@ -68,33 +68,8 @@
                         </div>
 
                     </div>
-                    <div class="buyButton">
-                        <button class="btn normal" type="button">
-                            Cumpara
-                        </button>
-                    </div>
-                    <div class="articleButton">
-                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
-                            Vezi mai multe
-                        </button>
-                    </div>
-                </div>
-
-                <div class="articleContainer">
-                    <div class="articleImg">
-                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
-                            alt="imgPost" />
-                    </div>
-                    <div class="articleTitle">
-                        <h2>
-                            Fructe
-                        </h2>
-                    </div>
-                    <div class="pret">
-                        <h1>Subtotal:</h1>
-                        <div class="pret_final">
-                            18 Lei/12 Lei
-                        </div>
+                    <div class="cantitate">
+                        <h2>Cantitate: 22 buc </h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
@@ -124,6 +99,40 @@
                             18 Lei/12 Lei
                         </div>
                     </div>
+                    <div class="cantitate">
+                        <h2>Cantitate: 22 buc </h2>
+                    </div>
+                    <div class="buyButton">
+                        <button class="btn normal" type="button">
+                            Cumpara
+                        </button>
+                    </div>
+                    <div class="articleButton">
+                        <button class="btn normal" onclick="location.href='produs.php'" type="button">
+                            Vezi mai multe
+                        </button>
+                    </div>
+                </div>
+
+                <div class="articleContainer">
+                    <div class="articleImg">
+                        <img src="https://i.pinimg.com/564x/30/01/c8/3001c883c614c01ea0cffd84b89b7f35.jpg"
+                            alt="imgPost" />
+                    </div>
+                    <div class="articleTitle">
+                        <h2>
+                            Fructe
+                        </h2>
+                    </div>
+                    <div class="pret">
+                        <h1>Subtotal:</h1>
+                        <div class="pret_final">
+                            18 Lei/12 Lei
+                        </div>
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate: 22 buc </h2>
+                    </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
                             Cumpara
@@ -150,6 +159,9 @@
                         <div class="pret_final">
                             18 Lei/12 Lei
                         </div>
+                    </div>
+                    <div class="cantitate">
+                        <h2>Cantitate: 22 buc </h2>
                     </div>
                     <div class="buyButton">
                         <button class="btn normal" type="button">
