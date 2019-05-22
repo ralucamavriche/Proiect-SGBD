@@ -30,5 +30,5 @@ END afisare_produse_comanda;
 
 set serveroutput on;
 begin
-    afisare_produse_comanda(4);
+    afisare_produse_comanda(222222);
 end;

@@ -11,7 +11,7 @@ AS
     v_pret int;
 
 BEGIN
-    suma:=0;
+    v_suma:=0;
    open c_id_comanda;
    open c_id_produs;   
 LOOP
@@ -23,15 +23,16 @@ LOOP
     exit when c_id_comanda%NOTFOUND;
     select numar_bucata_produs  into  v_nr_bucati from detalii_comenzi where id_comanda=vv_id and id_produs=vv_id_produs;
 
-    suma:= suma + v_pret*v_nr_bucati;
+    v_suma:= v_suma + v_pret*v_nr_bucati;
 END LOOP;
 close c_id_comanda;
 close c_id_produs;
 
-return suma;
+return v_suma;
 END total_suma_comanda;
 
 set serveroutput on;
 begin
-    total_suma_comanda(222222);
+    DBMS_OUTPUT.PUT_LINE('Comanda este in valoare de: ');
+    DBMS_OUTPUT.PUT_LINE(total_suma_comanda(222222) || ' lei');
 end;
